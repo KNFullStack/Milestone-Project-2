@@ -21,33 +21,6 @@ function matchingPair() {
     }
 }
 
-let cards = document.getElementsByClassName("card");
-for (let i = 0; i < cards.length; i++) {
-    cards[i].addEventListener("click", function (event) {
-        pairArray.push(event.target);
-        if (pairArray.length === 2) {
-            if (pairArray[0].id === pairArray[1].id) {
-                console.log("you clicked the same item twice!");
-                pairArray = [];
-            } else {
-                matchingPair();
-            }
-        } else if (pairArray.length === 3) {
-            console.log("An error has occured. Resetting last selection.");
-            pairArray = [];
-        }
-    });
-}
-
-for (let i = 0; i < cards.length; i++) {
-    cards[i].addEventListener("mouseover", function () {
-        this.style.backgroundColor = "darkgreen";
-    });
-    cards[i].addEventListener("mouseleave", function () {
-        this.style.backgroundColor = "green";
-    });
-}
-
 function incrementScore() {
     let currentScore = document.getElementById("currentScore");
     currentScore.innerHTML = ++score;
@@ -59,8 +32,40 @@ function decrementScore() {
 
 let play = document.getElementById("playButton");
 play.addEventListener("click", function () {
-    // allow score counter to be used
-    // hide icons in the divs
+    let cards = document.getElementsByClassName("card");
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].addEventListener("click", function (event) {
+            pairArray.push(event.target);
+            if (pairArray.length === 2) {
+                if (pairArray[0].id === pairArray[1].id) {
+                    console.log("you clicked the same item twice!");
+                    pairArray = [];
+                } else {
+                    matchingPair();
+                }
+            } else if (pairArray.length === 3) {
+                console.log("An error has occured. Resetting last selection.");
+                pairArray = [];
+            }
+        });
+    }
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].addEventListener("mouseover", function () {
+            this.style.backgroundColor = "darkgreen";
+        });
+        cards[i].addEventListener("mouseleave", function () {
+            this.style.backgroundColor = "green";
+        });
+        cards[i].addEventListener("click", function () {
+            this.style.display = "inline.block";
+        });
+    }
+    let cardIcons = document.getElementsByTagName("i");
+    for (let i = 0; i < cardIcons.length; i++) {
+        cardIcons[i].style.display = "none"
+    }
+
+    // display icons once clicked - insert into below function?
     // randomise the placement of the divs in the grid
 })
 
