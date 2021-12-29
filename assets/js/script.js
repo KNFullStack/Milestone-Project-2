@@ -1,6 +1,6 @@
 let pairArray = [];
 let score = 0;
-let allPairsFound = []; // can use this to house the total number of pairs to be found, and that are left to be found, then when length=0 the player has found all pairs
+let pairsFound = []; // can use this to house the total number of pairs to be found, and that are left to be found, then when length=0 the player has found all pairs
 
 function matchingPair() {
     if (
@@ -9,7 +9,7 @@ function matchingPair() {
     ) {
         console.log("correct");
         incrementScore();
-        // do something with the pair that has been found - the allPairsFound array, AND the physical div.
+        // do something with the pair that has been found - the pairsFound array, AND the physical div.
         pairArray = [];
     } else if (
         pairArray[0].getAttribute("data-card-pair") !==
@@ -57,12 +57,18 @@ function decrementScore() {
     currentScore.innerHTML = --score;
 }
 
+let play = document.getElementById("playButton");
+play.addEventListener("click", function () {
+    // allow score counter to be used
+    // hide icons in the divs
+    // randomise the placement of the divs in the grid
+})
+
 // to do list:
-// add lots of icons to the HTML document
 // figure out a way to randomise the placement on the screen of those divs.
 // sort out the buttons functionality and styling
 // link a contact form, where there is an API attached, as well as preventing the default action.
 // think about a canvas type homepage?
 // colour schemes
 // switch case for scoring boundaries?
-// function to check if the allPairsFound is empty and then what happens next.
+// function to check if the pairsFound is empty and then what happens next.
