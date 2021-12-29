@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Matcher!</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://kit.fontawesome.com/ca6c583753.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section class="background">
+        <div class="cards-container">
+            <div class="card" id="card-one" data-card-pair="one">
+                <i class="fas fa-yin-yang"></i>
+            </div>
+            <div class="card" id="card-two" data-card-pair="one">
+                <i id="test" class="fas fa-yin-yang"></i>
+            </div>
+            <div class="card" id="card-three" data-card-pair="two">1</div>
+            <div class="card" id="card-four" data-card-pair="two">2</div>
+            <div class="card" id="card-five" data-card-pair="three"></div>
+            <div class="card" id="card-six" data-card-pair="three"></div>
+            <div class="card" id="card-seven" data-card-pair="four"></div>
+            <div class="card" id="card-eight" data-card-pair="four"></div>
+            <div class="card" id="card-nine" data-card-pair="five"></div>
+            <div class="card" id="card-ten" data-card-pair="five"></div>
+            <div class="card" id="card-eleven" data-card-pair="six"></div>
+            <div class="card" id="card-twelve" data-card-pair="six"></div>
+            <div class="card" id="card-thirteen" data-card-pair="seven"></div>
+            <div class="card" id="card-fourteen" data-card-pair="seven"></div>
+            <div class="card" id="card-fifteen" data-card-pair="eight"></div>
+            <div class="card" id="card-sixteen" data-card-pair="eight"></div>
+            <div class="card" id="card-seventeen" data-card-pair="nine"></div>
+            <div class="card" id="card-eighteen" data-card-pair="nine"></div>
+            <div class="card" id="card-nineteen" data-card-pair="ten"></div>
+            <div class="card" id="card-one" data-card-pair="ten"></div>
+            <div class="scoreboard" id="scoreboard">
+                <p class="">score</p>
+                <p id="currentScore"></p>
+            </div>
+            <div class="controls" id="controls">
+                <p id="playButton">play button</p>
+                <p id="quitButton">quit button</p>
+                <p id="contactButton">contact button</p>
+            </div>
+        </div>
+    </section>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
