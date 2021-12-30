@@ -4,23 +4,21 @@ let pairsFound = []; // can use this to house the total number of pairs to be fo
 let cardIcons;
 
 function matchingPair() {
-    if (
-        pairArray[0].path[0].attributes[2].value ===
-        pairArray[1].path[0].attributes[2].value
-    ) {
+    let clickOne = pairArray[0].srcElement.attributes[2].value;
+    let clickTwo = pairArray[1].srcElement.attributes[2].value;
+    console.log(clickOne)
+    console.log(clickTwo)
+    if (clickOne === clickTwo) {
         console.log("correct");
         incrementScore();
         pairsFound.push(...pairArray);
         // do something with the pair that has been found - the pairsFound array, AND the physical div. ( NOW I HAVE THE WHOLE EVENT)
         // stop them being clickable again and keep their display
         pairArray = [];
-    } else if (
-        pairArray[0].path[0].attributes[2].value !==
-        pairArray[1].path[0].attributes[2].value
-    ) {
+    } else if (clickOne !== clickTwo) {
         console.log("incorrect");
         decrementScore();
-        // how do i get the below code to maintain the display for 2 seconds before changing to "none"?
+        // how do i get the below code to maintain the display for 2 seconds before changing to "none"? *************************************************
         for (let i = 0; i < pairArray.length; i++) {
             let cardId = pairArray[i].target.id;
             let card = document.getElementById(`${cardId}`).getElementsByTagName("i");
@@ -49,8 +47,8 @@ play.addEventListener("click", function () {
     let cards = document.getElementsByClassName("card");
     for (let i = 0; i < cards.length; i++) {
         cards[i].addEventListener("click", function (event) {
+            this.children[0].style.display = "inline-block";
             pairArray.push(event);
-            event.path[0].children[0].style.display = "inline-block";
             if (pairArray.length === 2) {
                 if (pairArray[0].target.id === pairArray[1].target.id) {
                     console.log("you clicked the same item twice!");
