@@ -1,6 +1,6 @@
 let pairArray = [];
 let score = 0;
-let pairsFound = []; // can use this to house the total number of pairs to be found, and that are left to be found, then when length=0 the player has found all pairs
+let pairsFound = [];
 let cardIcons;
 
 function matchingPair() {
@@ -23,16 +23,15 @@ function matchingPair() {
             card[0].style.display = "none";
         }
         pairArray = [];
-    } // the below was to catch errors when the pairArray was holding more than 2 items
-    //which occured when using a setTimeOut to maintain the display of the icons and clicking other items
-    else if (pairArray.length > 2) {
-        console.log("error, resetting selection");
-        pairArray = [];
     }
 }
 
 function checkForWin() {
-    // when that array length is 20 (all 20 unique ids) display winning message and score.
+    if (pairsFound.length === 20) {
+        // a pop up saying congratulations you have won! along with a button to quit back to the default screen, or a button to restart the game.
+        // box should also contain links to socials?
+        // box should also contain 
+    }
 }
 
 function stopFurtherClicks() {
@@ -45,11 +44,11 @@ function stopFurtherClicks() {
 
 function incrementScore() {
     let currentScore = document.getElementById("currentScore");
-    currentScore.innerHTML = ++score;
+    currentScore.innerHTML = score += 3;
 }
 
 function decrementScore() {
-    currentScore.innerHTML = --score;
+    currentScore.innerHTML = score -= 0.5;
 }
 
 let play = document.getElementById("playButton");
@@ -62,7 +61,12 @@ play.addEventListener("click", function () {
             if (pairArray.length === 2) {
                 if (pairArray[0].target.id === pairArray[1].target.id) {
                     console.log("you clicked the same item twice!");
-
+                    for (let i = 0; i < pairArray.length; i++) {
+                        let cardId = pairArray[i].target.id;
+                        let card = document.getElementById(`${cardId}`).getElementsByTagName("i");
+                        card[0].style.display = "none";
+                    }
+                    decrementScore()
                     pairArray = [];
                 } else {
                     matchingPair();
@@ -86,6 +90,32 @@ play.addEventListener("click", function () {
         });
     }
     // randomise the placement of the divs in the grid
+    let positionArray = [];
+    while (positionArray.length < 20) {
+        let randomNumber = Math.floor(Math.random() * 20);
+        positionArray.push(randomNumber)
+    }
+    console.log(positionArray);
+    // cards[0].style.order = 17
+    // cards[1].style.order = 14
+    // cards[2].style.order = 1
+    // cards[3].style.order = 16
+    // cards[4].style.order = 8
+    // cards[5].style.order = 15
+    // cards[6].style.order = 7
+    // cards[7].style.order = 2
+    // cards[8].style.order = 14
+    // cards[9].style.order = 6
+    // cards[10].style.order = 12
+    // cards[11].style.order = 3
+    // cards[12].style.order = 5
+    // cards[13].style.order = 19
+    // cards[14].style.order = 4
+    // cards[15].style.order = 11
+    // cards[16].style.order = 10
+    // cards[17].style.order = 9
+    // cards[18].style.order = 20
+    // cards[19].style.order = 18
 })
 
 // to do list:
@@ -95,5 +125,4 @@ play.addEventListener("click", function () {
 // think about a canvas type homepage?
 // colour schemes
 // switch case for scoring boundaries?
-// function to check if the pairsFound is empty and then what happens next.
 // browser cookies for a username etc?
