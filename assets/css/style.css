@@ -39,7 +39,10 @@
     border: 1px solid blue;
 }
 
-.controls {
+.game-controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     height: 15vh;
     width: 20vw;
     grid-column: 3 / 5;
@@ -47,6 +50,16 @@
     height: 15vh;
     width: 20vw;
     border: 1px solid red;
+}
+
+.game-controls button,
+.home-controls button {
+    height: 25%;
+    width: 50%;
+    align-self: center;
+    background-color: black;
+    color: white;
+    font-family: "Roboto", sans-serif;
 }
 
 .fas {
@@ -71,21 +84,29 @@
     font-size: 4rem;
 }
 
-.controls {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.controls button {
-    height: 25%;
-    width: 50%;
-    align-self: center;
-    background-color: black;
-    color: white;
-    font-family: "Roboto", sans-serif;
-}
-
 .unclickable {
     pointer-events: none !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.darkmode {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(8, 26, 2);
+}
+
+#homepage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#homepage-box {
+    height: 50%;
+    width: 50%;
+    border: solid 1px black;
 }

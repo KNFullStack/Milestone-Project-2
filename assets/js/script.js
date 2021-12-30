@@ -1,7 +1,51 @@
 let pairArray = [];
-let score = 0;
 let pairsFound = [];
-let cardIcons;
+let score = 0;
+let cardIcons = document.getElementsByTagName("i");
+let game = document.getElementById("gamepage");
+let home = document.getElementById("homepage");
+let play = document.getElementById("playButton");
+
+play.addEventListener("click", function () {
+    home.classList.add("hide");
+    game.classList.remove("hide");
+    let cards = document.getElementsByClassName("card");
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].addEventListener("click", function (event) {
+            this.children[0].style.display = "inline-block";
+            pairArray.push(event);
+            if (pairArray.length === 2) {
+                if (pairArray[0].target.id === pairArray[1].target.id) {
+                    console.log("you clicked the same item twice!");
+                    hideIcons()
+                    decrementScore()
+                    pairArray = [];
+                } else {
+                    matchingPair();
+                }
+            } else if (pairArray.length === 3) {
+                console.log("An error has occured. Resetting last selection.");
+                hideIcons();
+                pairArray = [];
+            }
+        });
+    }
+    for (let i = 0; i < cardIcons.length; i++) {
+        cardIcons[i].style.display = "none";
+    }
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].addEventListener("mouseover", function () {
+            this.style.backgroundColor = "darkgreen";
+        });
+        cards[i].addEventListener("mouseleave", function () {
+            this.style.backgroundColor = "green";
+        });
+    }
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].style.order = Math.floor(Math.random() * 20) + 1;
+
+    }
+})
 
 function matchingPair() {
     let clickOne = pairArray[0].target.getAttribute("data-card-pair");
@@ -16,12 +60,7 @@ function matchingPair() {
     } else if (clickOne !== clickTwo) {
         console.log("incorrect");
         decrementScore();
-        // how do i get the below code to maintain the display for 2 seconds before changing to "none"? *************************************************
-        for (let i = 0; i < pairArray.length; i++) {
-            let cardId = pairArray[i].target.id;
-            let card = document.getElementById(`${cardId}`).getElementsByTagName("i");
-            card[0].style.display = "none";
-        }
+        hideIcons()
         pairArray = [];
     }
 }
@@ -51,49 +90,15 @@ function decrementScore() {
     currentScore.innerHTML = score -= 0.5;
 }
 
-let play = document.getElementById("playButton");
-play.addEventListener("click", function () {
-    let cards = document.getElementsByClassName("card");
-    for (let i = 0; i < cards.length; i++) {
-        cards[i].addEventListener("click", function (event) {
-            this.children[0].style.display = "inline-block";
-            pairArray.push(event);
-            if (pairArray.length === 2) {
-                if (pairArray[0].target.id === pairArray[1].target.id) {
-                    console.log("you clicked the same item twice!");
-                    for (let i = 0; i < pairArray.length; i++) {
-                        let cardId = pairArray[i].target.id;
-                        let card = document.getElementById(`${cardId}`).getElementsByTagName("i");
-                        card[0].style.display = "none";
-                    }
-                    decrementScore()
-                    pairArray = [];
-                } else {
-                    matchingPair();
-                }
-            } else if (pairArray.length === 3) {
-                console.log("An error has occured. Resetting last selection.");
-                pairArray = [];
-            }
-        });
+function hideIcons() {
+    // stay like this for hardmode and have an easy mode where they show for a second or two?
+    for (let i = 0; i < pairArray.length; i++) {
+        let cardId = pairArray[i].target.id;
+        let card = document.getElementById(`${cardId}`).getElementsByTagName("i");
+        card[0].style.display = "none";
     }
-    cardIcons = document.getElementsByTagName("i");
-    for (let i = 0; i < cardIcons.length; i++) {
-        cardIcons[i].style.display = "none";
-    }
-    for (let i = 0; i < cards.length; i++) {
-        cards[i].addEventListener("mouseover", function () {
-            this.style.backgroundColor = "darkgreen";
-        });
-        cards[i].addEventListener("mouseleave", function () {
-            this.style.backgroundColor = "green";
-        });
-    }
-    for (let i = 0; i < cards.length; i++) {
-        cards[i].style.order = Math.floor(Math.random() * 20) + 1;
+}
 
-    }
-})
 
 // to do list:
 // sort out the buttons functionality and styling

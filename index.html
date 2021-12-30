@@ -11,16 +11,23 @@
 </head>
 
 <body>
-    <section class="background">
+    <section id="homepage" class="background homepage">
+        <div id="homepage-box">
+            <div class="home-controls">
+                <button id="playButton">Play</button>
+                <button id="contactButton">Contact</button>
+            </div>
+        </div>
+    </section>
+    <section id="gamepage" class="background hide">
         <div class="cards-container">
             <div class="scoreboard" id="scoreboard">
                 <p id="score">Score:</p>
                 <p id="currentScore"></p>
             </div>
-            <div class="controls" id="controls">
-                <button id="playButton">Play</button>
+            <div class="game-controls" id="controls">
+                <button id="restartButton">Restart</button>
                 <button id="quitButton">Quit</button>
-                <button id="contactButton">Contact</button>
             </div>
             <div class="card" id="card-one" data-card-pair="one"><i class="fas fa-space-shuttle"></i></div>
             <div class="card" id="card-two" data-card-pair="one"><i class="fas fa-space-shuttle"></i></div>
@@ -42,7 +49,6 @@
             <div class="card" id="card-eighteen" data-card-pair="nine"><i class="fas fa-satellite-dish"></i></div>
             <div class="card" id="card-nineteen" data-card-pair="ten"><i class="fas fa-radiation-alt"></i></div>
             <div class="card" id="card-twenty" data-card-pair="ten"><i class="fas fa-radiation-alt"></i></div>
-
         </div>
     </section>
     <script src="assets/js/script.js"></script>
