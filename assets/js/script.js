@@ -89,37 +89,13 @@ play.addEventListener("click", function () {
             this.style.backgroundColor = "green";
         });
     }
-    // randomise the placement of the divs in the grid
-    let positionArray = [];
-    while (positionArray.length < 20) {
-        let randomNumber = Math.floor(Math.random() * 20);
-        positionArray.push(randomNumber)
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].style.order = Math.floor(Math.random() * 20) + 1;
+
     }
-    console.log(positionArray);
-    // cards[0].style.order = 17
-    // cards[1].style.order = 14
-    // cards[2].style.order = 1
-    // cards[3].style.order = 16
-    // cards[4].style.order = 8
-    // cards[5].style.order = 15
-    // cards[6].style.order = 7
-    // cards[7].style.order = 2
-    // cards[8].style.order = 14
-    // cards[9].style.order = 6
-    // cards[10].style.order = 12
-    // cards[11].style.order = 3
-    // cards[12].style.order = 5
-    // cards[13].style.order = 19
-    // cards[14].style.order = 4
-    // cards[15].style.order = 11
-    // cards[16].style.order = 10
-    // cards[17].style.order = 9
-    // cards[18].style.order = 20
-    // cards[19].style.order = 18
 })
 
 // to do list:
-// figure out a way to randomise the placement on the screen of those divs.
 // sort out the buttons functionality and styling
 // link a contact form, where there is an API attached, as well as preventing the default action.
 // think about a canvas type homepage?
