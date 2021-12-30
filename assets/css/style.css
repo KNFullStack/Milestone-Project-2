@@ -85,3 +85,7 @@
     color: white;
     font-family: "Roboto", sans-serif;
 }
+
+.unclickable {
+    pointer-events: none !important;
+}

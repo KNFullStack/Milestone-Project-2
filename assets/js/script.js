@@ -9,9 +9,9 @@ function matchingPair() {
     if (clickOne === clickTwo) {
         console.log("correct");
         incrementScore();
+        stopFurtherClicks();
         pairsFound.push(...pairArray);
-        // do something with the pair that has been found - the pairsFound array, AND the physical div. ( NOW I HAVE THE WHOLE EVENT)
-        // stop them being clickable again and keep their display
+        checkForWin();
         pairArray = [];
     } else if (clickOne !== clickTwo) {
         console.log("incorrect");
@@ -28,6 +28,18 @@ function matchingPair() {
     else if (pairArray.length > 2) {
         console.log("error, resetting selection");
         pairArray = [];
+    }
+}
+
+function checkForWin() {
+    // when that array length is 20 (all 20 unique ids) display winning message and score.
+}
+
+function stopFurtherClicks() {
+    for (let i = 0; i < pairArray.length; i++) {
+        let cardId = pairArray[i].target.id;
+        let card = document.getElementById(`${cardId}`)
+        card.classList.add("unclickable")
     }
 }
 
@@ -50,6 +62,7 @@ play.addEventListener("click", function () {
             if (pairArray.length === 2) {
                 if (pairArray[0].target.id === pairArray[1].target.id) {
                     console.log("you clicked the same item twice!");
+
                     pairArray = [];
                 } else {
                     matchingPair();
@@ -83,3 +96,4 @@ play.addEventListener("click", function () {
 // colour schemes
 // switch case for scoring boundaries?
 // function to check if the pairsFound is empty and then what happens next.
+// browser cookies for a username etc?
