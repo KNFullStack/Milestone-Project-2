@@ -99,13 +99,13 @@
     background-color: rgb(8, 26, 2);
 }
 
-#homepage {
+.homepage {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#homepage-box {
+.homepage-box {
     height: 50%;
     width: 50%;
     border: solid 1px black;
