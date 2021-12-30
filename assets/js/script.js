@@ -4,10 +4,8 @@ let pairsFound = []; // can use this to house the total number of pairs to be fo
 let cardIcons;
 
 function matchingPair() {
-    let clickOne = pairArray[0].srcElement.attributes[2].value;
-    let clickTwo = pairArray[1].srcElement.attributes[2].value;
-    console.log(clickOne)
-    console.log(clickTwo)
+    let clickOne = pairArray[0].target.getAttribute("data-card-pair");
+    let clickTwo = pairArray[1].target.getAttribute("data-card-pair");
     if (clickOne === clickTwo) {
         console.log("correct");
         incrementScore();
