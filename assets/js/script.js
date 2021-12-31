@@ -13,7 +13,26 @@ let back = document.getElementById("backButton");
 let restart = document.getElementById("restartButton");
 let quit = document.getElementById("quitButton");
 
-play.addEventListener("click", function () {
+play.addEventListener("click", playGame)
+
+contact.addEventListener("click", function () {
+    homeBox.classList.add("hide");
+    contactBox.classList.remove("hide");
+    return
+})
+
+back.addEventListener("click", function () {
+    homeBox.classList.remove("hide");
+    contactBox.classList.add("hide");
+    return
+})
+quit.addEventListener("click", function () {
+    document.location.href = "/index.html"
+})
+
+restart.addEventListener("click", restartGame)
+
+function playGame() {
     home.classList.add("hide");
     game.classList.remove("hide");
     for (let i = 0; i < cards.length; i++) {
@@ -22,6 +41,8 @@ play.addEventListener("click", function () {
             pairArray.push(event);
             if (pairArray.length === 2) {
                 // console.log(pairArray) THIS IS HAPPENING TWICE WHEN I CLICK PLAY AFTER CLICKING QUIT/RESTART (RESTART SEEMS TO WORK SOMETIMES).
+                // restart works fine every time until quit is clicked - SEEMS TO BE THE FACT THAT PLAY IS CLICKED TWICE THEN TECHNICALLY.
+                // so i need to put something in the quit button that STOP the playGame function working once clicked.
                 if (pairArray[0].target.id === pairArray[1].target.id) {
                     console.log("you clicked the same item twice!");
                     hideIcons()
@@ -54,27 +75,7 @@ play.addEventListener("click", function () {
     }
     randomOrder();
     return
-})
-
-contact.addEventListener("click", function () {
-    homeBox.classList.add("hide");
-    contactBox.classList.remove("hide");
-    return
-})
-
-back.addEventListener("click", function () {
-    homeBox.classList.remove("hide");
-    contactBox.classList.add("hide");
-    return
-})
-quit.addEventListener("click", function () {
-    restartGame();
-    home.classList.remove("hide");
-    game.classList.add("hide");
-    return
-})
-
-restart.addEventListener("click", restartGame)
+}
 
 function randomOrder() {
     for (let i = 0; i < cards.length; i++) {
