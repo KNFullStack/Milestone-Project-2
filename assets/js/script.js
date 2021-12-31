@@ -12,6 +12,11 @@ let homeBox = document.getElementById("homepageBox");
 let back = document.getElementById("backButton");
 let restart = document.getElementById("restartButton");
 let quit = document.getElementById("quitButton");
+const difficultyNormal = 500;
+const difficultyHard = 250;
+const difficultyInsane = 10;
+let difficulty = document.getElementById("difficulty").elements["difficulty"].value
+
 
 play.addEventListener("click", playGame)
 
@@ -40,9 +45,6 @@ function playGame() {
             this.children[0].style.display = "inline-block";
             pairArray.push(event);
             if (pairArray.length === 2) {
-                // console.log(pairArray) THIS IS HAPPENING TWICE WHEN I CLICK PLAY AFTER CLICKING QUIT/RESTART (RESTART SEEMS TO WORK SOMETIMES).
-                // restart works fine every time until quit is clicked - SEEMS TO BE THE FACT THAT PLAY IS CLICKED TWICE THEN TECHNICALLY.
-                // so i need to put something in the quit button that STOP the playGame function working once clicked.
                 if (pairArray[0].target.id === pairArray[1].target.id) {
                     console.log("you clicked the same item twice!");
                     hideIcons()
@@ -152,10 +154,10 @@ function hideIcons() {
         card[0].classList.add("fade");
         setTimeout(() => {
             card[0].style.display = "none";
-        }, 500)
+        }, `${difficultyNormal}`)
         card[0].classList.remove("fade");
     }
-    // stay like this for easy mode and have increased difficulty modes where set timeout value is decreased each time?
+    // switch case here for which difficulty selection = true - based on a button on the home screen - this will select the approparite variable.
     return
 }
 

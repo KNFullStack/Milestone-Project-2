@@ -7,21 +7,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Card Matcher!</title>
     <link rel="stylesheet" href="assets/css/style.css" />
-    <script src="https://kit.fontawesome.com/ca6c583753.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <section id="homepage" class="background homepage">
         <div id="homepageBox" class="homepage-box">
             <div class="home-controls">
+                <h2>welcome to the card matching game!</h2>
                 <button id="playButton">Play</button>
                 <button id="contactButton">Contact</button>
+                <h2>what difficulty would you like to play....?</h2>
+                <form id="difficulty">
+                    <div>
+                        <input type="radio" id="normal" name="difficulty" value="normal" checked>
+                        <label for="normal">Normal</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="hard" name="difficulty" value="hard">
+                        <label for="hard">Hard</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="insane" name="difficulty" value="insane">
+                        <label for="insane">Insane</label>
+                    </div>
+
+                </form>
             </div>
         </div>
         <div id="contactFormBox" class="homepage-box hide">
             <div class="home-controls">
-                <button id="sendButton">Send</button>
-                <button id="backButton">Back</button>
+                <!-- look into the emailJS API documenation to get this linked with that -->
+                <h2>Contact form!</h2>
+                <p>if you have any queries please use the contact form below.</p>
+                <p>this includes found bugs, improvements and other feedback!</p>
+                <form action="GET">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" placeholder="Enter your full name" name="fullName" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter your email" name="email" required>
+                    <label for="message">Message</label>
+                    <input type="text" id="message" placeholder="Enter your message" name="message" required>
+                    <button type="button" id="sendButton">Send</button>
+                    <button type="button" id="backButton">Back</button>
+                </form>
             </div>
         </div>
     </section>
@@ -57,6 +85,7 @@
             <div class="card" id="card-twenty" data-card-pair="ten"><i class="fas fa-radiation-alt"></i></div>
         </div>
     </section>
+    <script src="https://kit.fontawesome.com/ca6c583753.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>
 
