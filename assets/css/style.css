@@ -70,6 +70,7 @@
     pointer-events: none;
     text-align: center;
     margin-top: 1.5rem;
+
 }
 
 #score,
@@ -109,4 +110,8 @@
     height: 50%;
     width: 50%;
     border: solid 1px black;
+}
+
+.fade {
+    opacity: 0;
 }

@@ -146,12 +146,16 @@ function decrementScore() {
 }
 
 function hideIcons() {
-    // stay like this for hardmode and have an easy mode where they show for a second or two?
     for (let i = 0; i < pairArray.length; i++) {
         let cardId = pairArray[i].target.id;
         let card = document.getElementById(`${cardId}`).getElementsByTagName("i");
-        card[0].style.display = "none";
+        card[0].classList.add("fade");
+        setTimeout(() => {
+            card[0].style.display = "none";
+        }, 500)
+        card[0].classList.remove("fade");
     }
+    // stay like this for easy mode and have increased difficulty modes where set timeout value is decreased each time?
     return
 }
 
