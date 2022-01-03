@@ -76,13 +76,9 @@
 #score,
 #scoreboard {
     margin-top: 0.5rem;
-    font-size: 2rem;
+    font-size: 3rem;
     font-family: "Roboto", sans-serif;
     text-align: center;
-}
-
-#scoreboard {
-    font-size: 4rem;
 }
 
 .unclickable {

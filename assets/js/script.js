@@ -5,6 +5,7 @@ let cardIcons = document.getElementsByTagName("i");
 let cards = document.getElementsByClassName("card");
 let game = document.getElementById("gamepage");
 let home = document.getElementById("homepage");
+let winner = document.getElementById("winner");
 let play = document.getElementById("playButton");
 let contact = document.getElementById("contactButton");
 let contactBox = document.getElementById("contactFormBox");
@@ -19,6 +20,11 @@ let normal = true;
 let hard = false;
 let insane = false;
 let duration;
+let returnHome = document.getElementById("returnHome");
+
+returnHome.addEventListener("click", () => {
+    //reset stuff and hide current and show main
+})
 
 difficultyNormal.addEventListener("click", () => {
     normal = true;
@@ -169,6 +175,8 @@ function matchingPair() {
 function checkForWin() {
     if (pairsFound.length === 20) {
         // a pop up saying congratulations you have won! along with a button to quit back to the default screen, or a button to restart the game.
+        winner.classList.remove("hide");
+        game.classList.add("hide");
     }
     return
 }

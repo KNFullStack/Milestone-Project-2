@@ -62,6 +62,8 @@
             <div class="game-controls" id="controls">
                 <button id="restartButton">Restart</button>
                 <button id="quitButton">Quit</button>
+                <p>Last Score:</p>
+                <p id="lastScore"></p>
             </div>
             <div class="card" id="card-one" data-card-pair="one"><i class="fas fa-space-shuttle"></i></div>
             <div class="card" id="card-two" data-card-pair="one"><i class="fas fa-space-shuttle"></i></div>
@@ -83,6 +85,14 @@
             <div class="card" id="card-eighteen" data-card-pair="nine"><i class="fas fa-satellite-dish"></i></div>
             <div class="card" id="card-nineteen" data-card-pair="ten"><i class="fas fa-radiation-alt"></i></div>
             <div class="card" id="card-twenty" data-card-pair="ten"><i class="fas fa-radiation-alt"></i></div>
+        </div>
+    </section>
+    <section id="winner" class="background homepage hide">
+        <div id="winnerBox" class="winner-box">
+            <div class="winner-controls">
+                <h2>congratulations, you win!</h2>
+                <button id="returnHome">return home!</button>
+            </div>
         </div>
     </section>
     <script src="https://kit.fontawesome.com/ca6c583753.js" crossorigin="anonymous"></script>
