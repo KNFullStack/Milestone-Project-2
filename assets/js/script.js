@@ -174,7 +174,7 @@ function matchingPair() {
 
 function checkForWin() {
     if (pairsFound.length === 20) {
-        // a pop up saying congratulations you have won! along with a button to quit back to the default screen, or a button to restart the game.
+        // a pop up saying congratulations you have won! along with a button to quit back to the default screen and reset the game elements
         winner.classList.remove("hide");
         game.classList.add("hide");
     }
