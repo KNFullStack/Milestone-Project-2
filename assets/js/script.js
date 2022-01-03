@@ -12,14 +12,20 @@ let homeBox = document.getElementById("homepageBox");
 let back = document.getElementById("backButton");
 let restart = document.getElementById("restartButton");
 let quit = document.getElementById("quitButton");
-const difficultyNormal = 500;
+const difficultyNormal = document.getElementById("normal");
 const difficultyHard = 250;
 const difficultyInsane = 10;
-let difficulty = document.getElementById("difficulty").elements["difficulty"].value
+
+if (difficultyNormal.checked) {
+    console.log("normal checked")
+} else if (difficultyHard.checked) {
+    console.log("hard checked")
+}
 
 play.addEventListener("click", () => {
     home.classList.add("hide");
     game.classList.remove("hide");
+    console.log(difficulty)
 })
 
 contact.addEventListener("click", function () {
@@ -159,10 +165,10 @@ function hideIcons() {
         card[0].classList.add("fade");
         setTimeout(() => {
             card[0].style.display = "none";
-        }, `${difficultyNormal}`)
+        }, 500)
         card[0].classList.remove("fade");
     }
-    // switch case here for which difficulty selection = true - based on a button on the home screen - this will select the approparite variable.
+    // switch case here for which difficulty selection = true - based on a button on the home screen - this will select the approparite variable. change 500
     return
 }
 
