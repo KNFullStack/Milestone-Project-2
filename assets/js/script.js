@@ -17,8 +17,10 @@ const difficultyHard = 250;
 const difficultyInsane = 10;
 let difficulty = document.getElementById("difficulty").elements["difficulty"].value
 
-
-play.addEventListener("click", playGame)
+play.addEventListener("click", () => {
+    home.classList.add("hide");
+    game.classList.remove("hide");
+})
 
 contact.addEventListener("click", function () {
     homeBox.classList.add("hide");
@@ -31,15 +33,18 @@ back.addEventListener("click", function () {
     contactBox.classList.add("hide");
     return
 })
+
 quit.addEventListener("click", function () {
-    document.location.href = "/index.html"
+    restartGame();
+    home.classList.remove("hide");
+    game.classList.add("hide");
 })
 
 restart.addEventListener("click", restartGame)
 
+window.onload = playGame();
+
 function playGame() {
-    home.classList.add("hide");
-    game.classList.remove("hide");
     for (let i = 0; i < cards.length; i++) {
         cards[i].addEventListener("click", function (event) {
             this.children[0].style.display = "inline-block";
