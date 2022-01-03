@@ -13,34 +13,69 @@ let back = document.getElementById("backButton");
 let restart = document.getElementById("restartButton");
 let quit = document.getElementById("quitButton");
 const difficultyNormal = document.getElementById("normal");
-const difficultyHard = 250;
-const difficultyInsane = 10;
+const difficultyHard = document.getElementById("hard");
+const difficultyInsane = document.getElementById("insane");
+let normal = true;
+let hard = false;
+let insane = false;
+let duration;
 
-if (difficultyNormal.checked) {
-    console.log("normal checked")
-} else if (difficultyHard.checked) {
-    console.log("hard checked")
+difficultyNormal.addEventListener("click", () => {
+    normal = true;
+    hard = false;
+    insane = false;
+})
+difficultyHard.addEventListener("click", () => {
+    normal = false;
+    hard = true;
+    insane = false;
+})
+difficultyInsane.addEventListener("click", () => {
+    normal = false;
+    hard = false;
+    insane = true;
+})
+
+function hideIcons() {
+    if (normal) {
+        duration = 300;
+    }
+    if (hard) {
+        duration = 100;
+    }
+    if (insane) {
+        duration = 1;
+    }
+    for (let i = 0; i < pairArray.length; i++) {
+        let cardId = pairArray[i].target.id;
+        let card = document.getElementById(`${cardId}`).getElementsByTagName("i");
+        card[0].classList.add("fade");
+        setTimeout(() => {
+            card[0].style.display = "none";
+        }, `${duration}`)
+        card[0].classList.remove("fade");
+    }
+    return
 }
 
 play.addEventListener("click", () => {
     home.classList.add("hide");
     game.classList.remove("hide");
-    console.log(difficulty)
 })
 
-contact.addEventListener("click", function () {
+contact.addEventListener("click", () => {
     homeBox.classList.add("hide");
     contactBox.classList.remove("hide");
     return
 })
 
-back.addEventListener("click", function () {
+back.addEventListener("click", () => {
     homeBox.classList.remove("hide");
     contactBox.classList.add("hide");
     return
 })
 
-quit.addEventListener("click", function () {
+quit.addEventListener("click", () => {
     restartGame();
     home.classList.remove("hide");
     game.classList.add("hide");
@@ -157,21 +192,6 @@ function decrementScore() {
     currentScore.innerHTML = score -= 0.5;
     return
 }
-
-function hideIcons() {
-    for (let i = 0; i < pairArray.length; i++) {
-        let cardId = pairArray[i].target.id;
-        let card = document.getElementById(`${cardId}`).getElementsByTagName("i");
-        card[0].classList.add("fade");
-        setTimeout(() => {
-            card[0].style.display = "none";
-        }, 500)
-        card[0].classList.remove("fade");
-    }
-    // switch case here for which difficulty selection = true - based on a button on the home screen - this will select the approparite variable. change 500
-    return
-}
-
 
 // to do list:
 // sort out the buttons functionality and styling
