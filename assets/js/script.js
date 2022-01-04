@@ -21,9 +21,12 @@ let hard = false;
 let insane = false;
 let duration;
 let returnHome = document.getElementById("returnHome");
+let lastScore = document.getElementById("lastScore");
 
 returnHome.addEventListener("click", () => {
-    //reset stuff and hide current and show main
+    home.classList.remove("hide");
+    game.classList.add("hide");
+    winner.classList.add("hide");
 })
 
 difficultyNormal.addEventListener("click", () => {
@@ -174,9 +177,10 @@ function matchingPair() {
 
 function checkForWin() {
     if (pairsFound.length === 20) {
-        // a pop up saying congratulations you have won! along with a button to quit back to the default screen and reset the game elements
+        lastScore.innerHTML = score;
         winner.classList.remove("hide");
         game.classList.add("hide");
+        restartGame();
     }
     return
 }
