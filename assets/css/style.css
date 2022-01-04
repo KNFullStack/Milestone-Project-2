@@ -111,3 +111,10 @@
 .fade {
     opacity: 0;
 }
+
+.winner-box {
+    border: 1px solid black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}

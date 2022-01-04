@@ -27,6 +27,7 @@ returnHome.addEventListener("click", () => {
     home.classList.remove("hide");
     game.classList.add("hide");
     winner.classList.add("hide");
+    restartGame();
 })
 
 difficultyNormal.addEventListener("click", () => {
@@ -48,11 +49,9 @@ difficultyInsane.addEventListener("click", () => {
 function hideIcons() {
     if (normal) {
         duration = 300;
-    }
-    if (hard) {
+    } else if (hard) {
         duration = 100;
-    }
-    if (insane) {
+    } else if (insane) {
         duration = 1;
     }
     for (let i = 0; i < pairArray.length; i++) {
@@ -179,8 +178,6 @@ function checkForWin() {
     if (pairsFound.length === 20) {
         lastScore.innerHTML = score;
         winner.classList.remove("hide");
-        game.classList.add("hide");
-        restartGame();
     }
     return
 }
