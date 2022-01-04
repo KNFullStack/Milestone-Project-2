@@ -22,6 +22,13 @@ let insane = false;
 let duration;
 let returnHome = document.getElementById("returnHome");
 let lastScore = document.getElementById("lastScore");
+let restartGamePostWin = document.getElementById("restartGamePostWin")
+
+restartGamePostWin.addEventListener("click", () => {
+    restartGame();
+    winner.classList.add("hide");
+    return
+})
 
 returnHome.addEventListener("click", () => {
     home.classList.remove("hide");

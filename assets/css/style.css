@@ -30,9 +30,11 @@
 }
 
 .scoreboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     height: 15vh;
     width: 20vw;
-    grid-column: 1 / 3;
     background-color: green;
     height: 15vh;
     width: 20vw;
@@ -45,7 +47,6 @@
     justify-content: space-evenly;
     height: 15vh;
     width: 20vw;
-    grid-column: 3 / 5;
     background-color: green;
     height: 15vh;
     width: 20vw;
@@ -55,7 +56,7 @@
 .game-controls button,
 .home-controls button {
     height: 25%;
-    width: 50%;
+    width: 75%;
     align-self: center;
     background-color: black;
     color: white;
@@ -74,9 +75,11 @@
 }
 
 #score,
+#previousScore,
+#lastScore,
 #scoreboard {
     margin-top: 0.5rem;
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-family: "Roboto", sans-serif;
     text-align: center;
 }
