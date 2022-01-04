@@ -115,7 +115,8 @@
     opacity: 0;
 }
 
-.winner-box {
+.winner-box,
+.hiScore-box {
     border: 1px solid black;
     position: absolute;
     left: 50%;

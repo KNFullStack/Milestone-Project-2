@@ -7,6 +7,7 @@ let game = document.getElementById("gamepage");
 let home = document.getElementById("homepage");
 let winner = document.getElementById("winner");
 let play = document.getElementById("playButton");
+let hiScores = document.getElementById("hiScoreButton");
 let contact = document.getElementById("contactButton");
 let contactBox = document.getElementById("contactFormBox");
 let homeBox = document.getElementById("homepageBox");
@@ -22,7 +23,19 @@ let insane = false;
 let duration;
 let returnHome = document.getElementById("returnHome");
 let lastScore = document.getElementById("lastScore");
-let restartGamePostWin = document.getElementById("restartGamePostWin")
+let restartGamePostWin = document.getElementById("restartGamePostWin");
+let closeHiScores = document.getElementById("closeHiScores");
+let hiScoresContainer = document.getElementById("hiScoresContainer");
+
+hiScores.addEventListener("click", () => {
+    hiScoresContainer.classList.remove("hide");
+    return
+})
+
+closeHiScores.addEventListener("click", () => {
+    hiScoresContainer.classList.add("hide");
+    return
+})
 
 restartGamePostWin.addEventListener("click", () => {
     restartGame();
@@ -35,22 +48,26 @@ returnHome.addEventListener("click", () => {
     game.classList.add("hide");
     winner.classList.add("hide");
     restartGame();
+    return
 })
 
 difficultyNormal.addEventListener("click", () => {
     normal = true;
     hard = false;
     insane = false;
+    return
 })
 difficultyHard.addEventListener("click", () => {
     normal = false;
     hard = true;
     insane = false;
+    return
 })
 difficultyInsane.addEventListener("click", () => {
     normal = false;
     hard = false;
     insane = true;
+    return
 })
 
 function hideIcons() {
@@ -76,6 +93,7 @@ function hideIcons() {
 play.addEventListener("click", () => {
     home.classList.add("hide");
     game.classList.remove("hide");
+    return
 })
 
 contact.addEventListener("click", () => {
@@ -94,6 +112,7 @@ quit.addEventListener("click", () => {
     restartGame();
     home.classList.remove("hide");
     game.classList.add("hide");
+    return
 })
 
 restart.addEventListener("click", restartGame)

@@ -16,6 +16,7 @@
                 <h2>welcome to the card matching game!</h2>
                 <button id="playButton">Play</button>
                 <button id="contactButton">Contact</button>
+                <button id="darkMode">DarkMode Toggle</button>
                 <h2>what difficulty would you like to play....?</h2>
                 <form id="difficulty">
                     <div>
@@ -68,7 +69,7 @@
                 <button id="quitButton">Quit</button>
             </div>
             <div class="game-controls" id="hiScores">
-                <button id="restartButton">Show your Hi-scores!</button>
+                <button id="hiScoreButton">Show your Hi-scores!</button>
             </div>
             <div class="card" id="card-one" data-card-pair="one"><i class="fas fa-space-shuttle"></i></div>
             <div class="card" id="card-two" data-card-pair="one"><i class="fas fa-space-shuttle"></i></div>
@@ -98,6 +99,13 @@
             <button id="returnHome">Back to main manu</button>
             <button id="restartGamePostWin">Restart the game</button>
         </div>
+    </div>
+    <div id="hiScoresContainer" class="hiScore-box hide">
+        <p id="hiScores">
+            Here are your best 5 scores:
+            <button id="closeHiScores">Back to Game</button>
+        </p>
+
     </div>
 
     <script src="https://kit.fontawesome.com/ca6c583753.js" crossorigin="anonymous"></script>
