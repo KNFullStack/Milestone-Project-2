@@ -105,6 +105,7 @@ contact.addEventListener("click", () => {
 back.addEventListener("click", () => {
     homeBox.classList.remove("hide");
     contactBox.classList.add("hide");
+    successText.classList.add("hide");
     return
 })
 
@@ -227,6 +228,41 @@ function decrementScore() {
     currentScore.innerHTML = score -= 0.5;
     return
 }
+
+// EmailJS Functionality
+
+function sendMail(contactForm) {
+    emailjs.send("service_xvli6vx", "template_8fqwdtw", {
+            "from_name": contactForm.fullName.value,
+            "from_email": contactForm.email.value,
+            "to_name": "Kingsley",
+            "message": contactForm.message.value,
+        })
+        .then((response) => {
+                console.log("success", response);
+                displaySuccess();
+            },
+            (error) => {
+                console.log("Error", error);
+            });
+
+    return false;
+}
+
+let successText = document.getElementById("displaySuccess");
+
+function displaySuccess() {
+    successText.classList.remove("hide");
+}
+
+
+
+
+
+
+
+
+
 
 // to do list:
 // sort out the buttons functionality and styling

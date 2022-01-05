@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Card Matcher!</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_ck9N0BXzMtUYWcHfM2fRq");
+        })();
+    </script>
 </head>
 
 <body>
@@ -37,19 +43,19 @@
         </div>
         <div id="contactFormBox" class="homepage-box hide">
             <div class="home-controls">
-                <!-- look into the emailJS API documenation to get this linked with that -->
                 <h2>Contact form!</h2>
                 <p>if you have any queries please use the contact form below.</p>
                 <p>this includes found bugs, improvements and other feedback!</p>
-                <form action="GET">
+                <form id="contact-form" onsubmit="return sendMail(this);">
                     <label for="fullName">Full Name:</label>
                     <input type="text" id="fullName" placeholder="Enter your full name" name="fullName" required>
                     <label for="email">Email:</label>
                     <input type="email" id="email" placeholder="Enter your email" name="email" required>
                     <label for="message">Message</label>
                     <input type="text" id="message" placeholder="Enter your message" name="message" required>
-                    <button type="button" id="sendButton">Send</button>
+                    <button type="submit" id="sendButton">Send</button>
                     <button type="button" id="backButton">Back</button>
+                    <p id="displaySuccess" class="hide">Thank you, your message has been sent.</p>
                 </form>
             </div>
         </div>
