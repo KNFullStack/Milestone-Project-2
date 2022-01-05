@@ -255,19 +255,8 @@ function displaySuccess() {
     successText.classList.remove("hide");
 }
 
-
-
-
-
-
-
-
-
-
 // to do list:
 // sort out the buttons functionality and styling
-// link a contact form, where there is an API attached, as well as preventing the default action.
 // think about a canvas type homepage?
 // colour schemes
-// switch case for scoring boundaries?
 // browser cookies for a username etc?

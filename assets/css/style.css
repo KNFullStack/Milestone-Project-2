@@ -92,13 +92,6 @@
     display: none !important;
 }
 
-.darkmode {
-    box-sizing: border-box;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(8, 26, 2);
-}
-
 .homepage {
     display: flex;
     align-items: center;
