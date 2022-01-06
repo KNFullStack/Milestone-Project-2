@@ -3,6 +3,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "Roboto", sans-serif;
 }
 
 html,
@@ -13,7 +14,7 @@ body {
 
 #canvas {
     position: fixed;
-    z-index: -1000;
+    z-index: -1;
 }
 
 .cards-container {
@@ -21,16 +22,20 @@ body {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 1fr);
     justify-content: center;
-    width: 98vw;
-    height: 98vh;
+    width: 100vw;
+    height: 100vh;
     place-items: center;
 }
 
 .card {
-    background-color: green;
+    background-color: rgb(26, 24, 24);
     height: 15vh;
     width: 20vw;
     border: 1px solid white;
+}
+
+.card i {
+    color: white;
 }
 
 .scoreboard {
@@ -39,10 +44,11 @@ body {
     justify-content: space-evenly;
     height: 15vh;
     width: 20vw;
-    background-color: green;
+    background-color: rgb(26, 24, 24);
     height: 15vh;
     width: 20vw;
     border: 1px solid white;
+    color: white;
 }
 
 .game-controls {
@@ -51,7 +57,7 @@ body {
     justify-content: space-evenly;
     height: 15vh;
     width: 20vw;
-    background-color: green;
+    background-color: rgb(26, 24, 24);
     height: 15vh;
     width: 20vw;
     border: 1px solid white;
@@ -59,18 +65,24 @@ body {
 
 .game-controls button,
 .home-controls button {
-    height: 25%;
-    width: 75%;
-    align-self: center;
+    height: 20%;
+    width: 50%;
     background-color: black;
     color: white;
-    font-family: "Roboto", sans-serif;
 }
 
 .home-controls {
+    background-color: black;
     position: fixed;
     margin-top: 33vh;
-    z-index: 1000;
+    z-index: 1;
+    border: 1px solid white;
+    padding: 1rem;
+}
+
+.home-controls h1,
+.home-controls h2 {
+    text-align: center;
 }
 
 .fas {
@@ -109,8 +121,8 @@ body {
 }
 
 .homepage-box {
-    height: 50%;
-    width: 50%;
+    display: flex;
+    justify-content: center;
 }
 
 .fade {
@@ -125,6 +137,16 @@ body {
     top: 50%;
 }
 
-h2 {
+h1,
+h2,
+p {
+    color: white;
+}
+
+i {
+    color: white;
+}
+
+form {
     color: white;
 }

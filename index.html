@@ -17,13 +17,22 @@
 
 <body>
     <canvas id="canvas"></canvas>
-    <section id="homepage" class="background homepage">
+    <section id="homepage" class="homepage">
         <div id="homepageBox" class="homepage-box">
+
             <div class="home-controls">
-                <h2>welcome to the card matching game!</h2>
+                <h1>Train your brain with a simple memory game!</h1>
+                <br>
+                <form>
+                    <h2>Please enter a username:</h2>
+                    <input type="text" id="username" placeholder="Enter a username" name="username">
+                </form>
+                <br>
                 <button id="playButton">Play</button>
                 <button id="contactButton">Contact</button>
-                <h2>what difficulty would you like to play....?</h2>
+                <br>
+                <br>
+                <h2>Fancy a challenge?</h2>
                 <form id="difficulty">
                     <div>
                         <input type="radio" id="normal" name="difficulty" value="normal" checked>
@@ -37,11 +46,6 @@
                         <input type="radio" id="insane" name="difficulty" value="insane">
                         <label for="insane">Insane</label>
                     </div>
-
-                    <h2>Please enter a username:</h2>
-                    <label for="username">Username</label>
-                    <input type="text" id="username" placeholder="Enter a username" name="username">
-
                 </form>
             </div>
         </div>

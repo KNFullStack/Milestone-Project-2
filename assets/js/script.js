@@ -150,10 +150,10 @@ function playGame() {
     }
     for (let i = 0; i < cards.length; i++) {
         cards[i].addEventListener("mouseover", function () {
-            this.style.backgroundColor = "darkgreen";
+            this.style.backgroundColor = "black";
         });
         cards[i].addEventListener("mouseleave", function () {
-            this.style.backgroundColor = "green";
+            this.style.backgroundColor = "rgb(26, 24, 24)";
         });
     }
     randomOrder();
