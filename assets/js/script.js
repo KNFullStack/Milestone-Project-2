@@ -256,7 +256,8 @@ function displaySuccess() {
 }
 
 // to do list:
-// sort out the buttons functionality and styling
-// think about a canvas type homepage?
-// colour schemes
-// browser cookies for a username etc?
+// CSS Styling of pages and popups.
+// Group code together in a logical way, grouping by variable declarations and relevant code (CSS & JS)
+// Starry sky HTML canvas background. Colour scheme to dark to fit with a space theme.
+// Input field for username at the end to save their score. Use localStorage to save values.
+// Go through CSS and classes to confirm use and if it makes sense.
