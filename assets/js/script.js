@@ -255,9 +255,45 @@ function displaySuccess() {
     successText.classList.remove("hide");
 }
 
+// Star Canvas Background
+const canvas = document.getElementById("canvas");
+const context = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+function random(min, max) {
+    return min + Math.random() * (max + 1 - min);
+}
+
+function stars() {
+    const canvasSize = canvas.width * canvas.height;
+    const starsFraction = canvasSize / 2000;
+    for (let i = 0; i < starsFraction; i++) {
+        let xPosition = random(2, canvas.width - 2);
+        let yPosition = random(2, canvas.height - 2);
+        let alpha = random(0.5, 1);
+        let size = random(1, 2);
+        context.fillStyle = "#ffffff";
+        context.globalAlpha = alpha;
+        context.fillRect(xPosition, yPosition, size, size);
+    }
+}
+
+stars();
+
+window.addEventListener("resize", function () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    stars();
+})
+
+
+
+
 // to do list:
 // CSS Styling of pages and popups.
 // Group code together in a logical way, grouping by variable declarations and relevant code (CSS & JS)
 // Starry sky HTML canvas background. Colour scheme to dark to fit with a space theme.
 // Input field for username at the end to save their score. Use localStorage to save values.
+//      username field added, now reference and use it. 
 // Go through CSS and classes to confirm use and if it makes sense.
