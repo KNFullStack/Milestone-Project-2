@@ -297,3 +297,4 @@ window.addEventListener("resize", function () {
 // Input field for username at the end to save their score. Use localStorage to save values.
 //      username field added, now reference and use it. 
 // Go through CSS and classes to confirm use and if it makes sense.
+// SEO things in <head>
