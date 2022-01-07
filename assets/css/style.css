@@ -17,6 +17,23 @@ body {
     z-index: -1;
 }
 
+.dialogue-box {
+    background-color: black;
+    position: fixed;
+    margin-top: 33vh;
+    z-index: 1;
+    border: 1px solid white;
+    padding: 1rem;
+    height: 40vh;
+    width: 30vw;
+}
+
+.dialogue-box h1,
+.dialogue-box h2 {
+    text-align: center;
+    color: white;
+}
+
 .cards-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -25,6 +42,19 @@ body {
     width: 100vw;
     height: 100vh;
     place-items: center;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 12vh;
+    width: 20vw;
+    background-color: rgb(82, 79, 79);
+    border: 1px solid white;
+    color: white;
+    font-size: 1.25rem;
+    text-align: center;
 }
 
 .card {
@@ -38,51 +68,33 @@ body {
     color: white;
 }
 
-.scoreboard {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 15vh;
-    width: 20vw;
-    background-color: rgb(26, 24, 24);
-    height: 15vh;
-    width: 20vw;
-    border: 1px solid white;
-    color: white;
-}
-
-.game-controls {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 15vh;
-    width: 20vw;
-    background-color: rgb(26, 24, 24);
-    height: 15vh;
-    width: 20vw;
-    border: 1px solid white;
-}
-
-.game-controls button,
-.home-controls button {
+button {
     height: 20%;
     width: 50%;
     background-color: black;
     color: white;
 }
 
-.home-controls {
-    background-color: black;
-    position: fixed;
-    margin-top: 33vh;
-    z-index: 1;
-    border: 1px solid white;
-    padding: 1rem;
+.winner-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.home-controls h1,
-.home-controls h2 {
-    text-align: center;
+/* .winner-box,
+.hiScore-box {
+    border: 1px solid white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+} */
+
+.content-box
+
+/*, .winner-box  */
+    {
+    display: flex;
+    justify-content: center;
 }
 
 .fas {
@@ -96,16 +108,6 @@ body {
 
 }
 
-#score,
-#previousScore,
-#lastScore,
-#scoreboard {
-    margin-top: 0.5rem;
-    font-size: 1.5rem;
-    font-family: "Roboto", sans-serif;
-    text-align: center;
-}
-
 .unclickable {
     pointer-events: none !important;
 }
@@ -114,39 +116,11 @@ body {
     display: none !important;
 }
 
-.homepage {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.homepage-box {
-    display: flex;
-    justify-content: center;
-}
-
 .fade {
     opacity: 0;
 }
 
-.winner-box,
-.hiScore-box {
-    border: 1px solid white;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-}
-
-h1,
-h2,
-p {
-    color: white;
-}
-
-i {
-    color: white;
-}
-
+p,
 form {
     color: white;
 }

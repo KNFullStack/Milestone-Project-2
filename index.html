@@ -17,10 +17,9 @@
 
 <body>
     <canvas id="canvas"></canvas>
-    <section id="homepage" class="homepage">
-        <div id="homepageBox" class="homepage-box">
-
-            <div class="home-controls">
+    <section id="homepage">
+        <div id="homepageBox" class="content-box">
+            <div class="dialogue-box">
                 <h1>Train your brain with a simple memory game!</h1>
                 <br>
                 <form>
@@ -49,8 +48,8 @@
                 </form>
             </div>
         </div>
-        <div id="contactFormBox" class="homepage-box hide">
-            <div class="home-controls">
+        <div id="contactFormBox" class="content-box hide">
+            <div class="dialogue-box">
                 <h2>Contact form!</h2>
                 <p>if you have any queries please use the contact form below.</p>
                 <p>this includes found bugs, improvements and other feedback!</p>
@@ -70,19 +69,19 @@
     </section>
     <section id="gamepage" class="background hide">
         <div class="cards-container">
-            <div class="scoreboard" id="scoreboard">
+            <div class="menu-item" id="scoreboard">
                 <p id="score">Current Score:</p>
                 <p id="currentScore"></p>
             </div>
-            <div class="scoreboard" id="previousScore">
+            <div class="menu-item" id="previousScore">
                 <p>Previous Score:</p>
                 <p id="lastScore"></p>
             </div>
-            <div class="game-controls" id="controls">
+            <div class="menu-item" id="controls">
                 <button id="restartButton">Restart</button>
                 <button id="quitButton">Quit</button>
             </div>
-            <div class="game-controls">
+            <div class="menu-item">
                 <button id="hiScoreButton">Show your Hi-scores!</button>
             </div>
             <div class="card" id="card-one" data-card-pair="one"><i class="fas fa-space-shuttle"></i></div>
@@ -107,20 +106,25 @@
             <div class="card" id="card-twenty" data-card-pair="ten"><i class="fas fa-radiation-alt"></i></div>
         </div>
     </section>
-    <div id="winner" class="winner-box hide">
-        <div class="winner-controls">
-            <h2>congratulations, you win!</h2>
-            <button id="returnHome">Back to main manu</button>
-            <button id="restartGamePostWin">Restart the game</button>
+    <section>
+        <div id="winner" class="content-box hide">
+            <div class="dialogue-box">
+                <h2>congratulations, you win!</h2>
+                <button id="returnHome">Back to main manu</button>
+                <button id="restartGamePostWin">Restart the game</button>
+            </div>
         </div>
-    </div>
-    <div id="hiScoresContainer" class="hiScore-box hide">
-        <p id="hiScores">
-            Here are your best 5 scores:
-            <button id="closeHiScores">Back to Game</button>
-        </p>
-
-    </div>
+    </section>
+    <section>
+        <div id="hiScoresContainer" class="content-box hide">
+            <div class="dialogue-box">
+                <p id="hiScores">
+                    Here are your best 5 scores:
+                    <button id="closeHiScores">Back to Game</button>
+                </p>
+            </div>
+        </div>
+    </section>
     <script src="https://kit.fontawesome.com/ca6c583753.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
     <noscript>Sorry, you need JavaScript to use this page.</noscript>
