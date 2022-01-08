@@ -70,29 +70,10 @@ difficultyInsane.addEventListener("click", () => {
     return
 })
 
-function hideIcons() {
-    if (normal) {
-        duration = 300;
-    } else if (hard) {
-        duration = 100;
-    } else if (insane) {
-        duration = 1;
-    }
-    for (let i = 0; i < pairArray.length; i++) {
-        let cardId = pairArray[i].target.id;
-        let card = document.getElementById(`${cardId}`).getElementsByTagName("i");
-        card[0].classList.add("fade");
-        setTimeout(() => {
-            card[0].style.display = "none";
-        }, `${duration}`)
-        card[0].classList.remove("fade");
-    }
-    return
-}
-
 play.addEventListener("click", () => {
     home.classList.add("hide");
     game.classList.remove("hide");
+    difficultyChecker();
     return
 })
 
@@ -129,8 +110,7 @@ function playGame() {
             if (pairArray.length === 2) {
                 if (pairArray[0].target.id === pairArray[1].target.id) {
                     console.log("you clicked the same item twice!");
-                    hideIcons()
-                    decrementScore()
+                    decrementScore();
                     pairArray = [];
                     return
                 } else {
@@ -139,7 +119,6 @@ function playGame() {
                 }
             } else if (pairArray.length === 3) {
                 console.log("An error has occured. Resetting last selection.");
-                hideIcons();
                 pairArray = [];
                 return
             }
@@ -149,15 +128,62 @@ function playGame() {
     for (let i = 0; i < cardIcons.length; i++) {
         cardIcons[i].style.display = "none";
     }
-    for (let i = 0; i < cards.length; i++) {
-        cards[i].addEventListener("mouseover", function () {
-            this.style.backgroundColor = "black";
-        });
-        cards[i].addEventListener("mouseleave", function () {
-            this.style.backgroundColor = "rgb(26, 24, 24)";
-        });
-    }
     randomOrder();
+    return
+}
+
+function difficultyChecker() {
+    if (normal) {
+        duration = 300;
+        durations();
+        mouseHoverFunction();
+        console.log("normal")
+        return
+    } else if (hard) {
+        duration = 100;
+        durations();
+        mouseHoverFunction();
+        console.log("hard")
+        return
+    } else if (insane) {
+        duration = 1;
+        durations();
+        console.log("insane");
+        for (let i = 0; i < cards.length; i++) {
+            cards[i].addEventListener("mouseover", function () {
+                this.style.backgroundColor = "white";
+            });
+            cards[i].addEventListener("mouseleave", function () {
+                this.style.backgroundColor = "rgb(26, 24, 24)";
+            });
+        }
+        return
+    }
+
+    function durations() {
+        for (let i = 0; i < pairArray.length; i++) {
+            let cardId = pairArray[i].target.id;
+            let card = document.getElementById(`${cardId}`).getElementsByTagName("i");
+            card[0].classList.add("fade");
+            setTimeout(() => {
+                card[0].style.display = "none";
+            }, `${duration}`)
+            card[0].classList.remove("fade");
+        }
+        return
+    }
+
+    function mouseHoverFunction() {
+        for (let i = 0; i < cards.length; i++) {
+            cards[i].addEventListener("mouseover", function () {
+                this.style.backgroundColor = "black";
+            });
+            cards[i].addEventListener("mouseleave", function () {
+                this.style.backgroundColor = "rgb(26, 24, 24)";
+            });
+        }
+        return
+    }
     return
 }
 
@@ -197,7 +223,7 @@ function matchingPair() {
     } else if (clickOne !== clickTwo) {
         console.log("incorrect");
         decrementScore();
-        hideIcons()
+        difficultyChecker();
         pairArray = [];
     }
     return

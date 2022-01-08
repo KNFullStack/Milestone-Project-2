@@ -43,7 +43,6 @@ body {
     width: 100vw;
     height: 100vh;
     place-items: center;
-    z-index: -10;
 }
 
 .menu-item {
