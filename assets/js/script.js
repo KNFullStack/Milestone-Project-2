@@ -1,8 +1,6 @@
 let pairArray = [];
 let pairsFound = [];
 let score = 0;
-let cardIcons = document.getElementsByTagName("i");
-let cards = document.getElementsByClassName("card");
 let game = document.getElementById("gamepage");
 let home = document.getElementById("homepage");
 let winner = document.getElementById("winner");
@@ -26,6 +24,8 @@ let lastScore = document.getElementById("lastScore");
 let restartGamePostWin = document.getElementById("restartGamePostWin");
 let closeHiScores = document.getElementById("closeHiScores");
 let hiScoresContainer = document.getElementById("hiScoresContainer");
+
+window.onload = playGame();
 
 hiScores.addEventListener("click", () => {
     hiScoresContainer.classList.remove("hide");
@@ -100,7 +100,9 @@ quit.addEventListener("click", () => {
 
 restart.addEventListener("click", restartGame)
 
-window.onload = playGame();
+
+let cardIcons = document.getElementsByTagName("i");
+let cards = document.getElementsByClassName("card");
 
 function playGame() {
     for (let i = 0; i < cards.length; i++) {
@@ -314,8 +316,6 @@ window.addEventListener("resize", function () {
 // to do list:
 // CSS Styling of pages and popups.
 // Group code together in a logical way, grouping by variable declarations and relevant code (CSS & JS)
-// Starry sky HTML canvas background. Colour scheme to dark to fit with a space theme.
 // Input field for username at the end to save their score. Use localStorage to save values.
 //      username field added, now reference and use it. 
-// Go through CSS and classes to confirm use and if it makes sense.
 // SEO things in <head>
