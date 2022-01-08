@@ -111,6 +111,7 @@ back.addEventListener("click", () => {
 
 quit.addEventListener("click", () => {
     restartGame();
+    hiScoresContainer.classList.add("hide");
     home.classList.remove("hide");
     game.classList.add("hide");
     return
@@ -178,7 +179,8 @@ function restartGame() {
     for (let i = 0; i < cardIcons.length; i++) {
         cardIcons[i].style.display = "none";
     }
-    randomOrder()
+    randomOrder();
+    hiScoresContainer.classList.add("hide");
     return
 }
 
