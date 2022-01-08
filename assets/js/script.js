@@ -109,7 +109,6 @@ function playGame() {
             pairArray.push(event);
             if (pairArray.length === 2) {
                 if (pairArray[0].target.id === pairArray[1].target.id) {
-                    console.log("you clicked the same item twice!");
                     decrementScore();
                     pairArray = [];
                     return
@@ -118,7 +117,6 @@ function playGame() {
                     return
                 }
             } else if (pairArray.length === 3) {
-                console.log("An error has occured. Resetting last selection.");
                 pairArray = [];
                 return
             }
@@ -137,18 +135,15 @@ function difficultyChecker() {
         duration = 300;
         durations();
         mouseHoverFunction();
-        console.log("normal")
         return
     } else if (hard) {
         duration = 100;
         durations();
         mouseHoverFunction();
-        console.log("hard")
         return
     } else if (insane) {
         duration = 1;
         durations();
-        console.log("insane");
         for (let i = 0; i < cards.length; i++) {
             cards[i].addEventListener("mouseover", function () {
                 this.style.backgroundColor = "white";
@@ -214,14 +209,12 @@ function matchingPair() {
     let clickOne = pairArray[0].target.getAttribute("data-card-pair");
     let clickTwo = pairArray[1].target.getAttribute("data-card-pair");
     if (clickOne === clickTwo) {
-        console.log("correct");
         incrementScore();
         stopFurtherClicks();
         pairsFound.push(...pairArray);
         checkForWin();
         pairArray = [];
     } else if (clickOne !== clickTwo) {
-        console.log("incorrect");
         decrementScore();
         difficultyChecker();
         pairArray = [];

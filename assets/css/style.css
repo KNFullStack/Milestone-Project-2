@@ -22,8 +22,6 @@ body {
     position: absolute;
     border: 1px solid white;
     padding: 1rem;
-    height: 40vh;
-    width: 30vw;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -33,6 +31,12 @@ body {
 .dialogue-box h2 {
     text-align: center;
     color: white;
+}
+
+.dialogue-box button {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .cards-container {
@@ -95,7 +99,6 @@ button {
     pointer-events: none;
     text-align: center;
     margin-top: 1.5rem;
-
 }
 
 .unclickable {
