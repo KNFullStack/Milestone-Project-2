@@ -323,4 +323,3 @@ window.addEventListener("resize", function () {
 // to do list:
 // Input field for username at the end to save their score. Use localStorage to save values.
 //      username field added, now reference and use it. 
-// SEO things in <head>
