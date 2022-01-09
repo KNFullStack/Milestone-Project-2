@@ -320,8 +320,6 @@ window.addEventListener("resize", function () {
 
 
 // to do list:
-// CSS Styling of pages and popups.
-// Group code together in a logical way, grouping by variable declarations and relevant code (CSS & JS)
 // Input field for username at the end to save their score. Use localStorage to save values.
 //      username field added, now reference and use it. 
 // SEO things in <head>
