@@ -25,6 +25,9 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0 0 100px 20px rgb(170, 19, 99),
+        0 0 200px 40px rgb(27, 24, 224),
+        0 0 300px 50px rgb(127, 129, 16);
 }
 
 .dialogue-box h1,
@@ -60,6 +63,9 @@ body {
     color: white;
     font-size: 1.25rem;
     text-align: center;
+    box-shadow: 0 0 50px 10px rgb(170, 19, 99),
+        0 0 100px 20px rgb(27, 24, 224),
+        0 0 150px 30px rgb(127, 129, 16);
 }
 
 .card {

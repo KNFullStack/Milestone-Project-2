@@ -323,3 +323,5 @@ window.addEventListener("resize", function () {
 // to do list:
 // Input field for username at the end to save their score. Use localStorage to save values.
 //      username field added, now reference and use it. 
+// can i insert a "secret" element into the game board in the middle, unclickable, 1 px, and give that a really big blur? maybe border radius of 50
+// to give a star like appearance... could have multiple of them dotted about? this is in order to overcome grid gap being black
