@@ -200,6 +200,7 @@ let home = document.getElementById("homepage");
 let contactBox = document.getElementById("contactFormBox");
 let homeBox = document.getElementById("homepageBox");
 let hiScoresContainer = document.getElementById("hiScoresContainer");
+let play = document.getElementById("playButton");
 
 play.addEventListener("click", () => {
     home.classList.add("hide");
