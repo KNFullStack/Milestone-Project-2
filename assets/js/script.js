@@ -1,108 +1,10 @@
+// General Gameplay.
 let pairArray = [];
 let pairsFound = [];
 let score = 0;
-let game = document.getElementById("gamepage");
-let home = document.getElementById("homepage");
-let winner = document.getElementById("winner");
-let play = document.getElementById("playButton");
-let hiScores = document.getElementById("hiScoreButton");
-let contact = document.getElementById("contactButton");
-let contactBox = document.getElementById("contactFormBox");
-let homeBox = document.getElementById("homepageBox");
-let back = document.getElementById("backButton");
-let restart = document.getElementById("restartButton");
-let quit = document.getElementById("quitButton");
-const difficultyNormal = document.getElementById("normal");
-const difficultyHard = document.getElementById("hard");
-const difficultyInsane = document.getElementById("insane");
-let normal = true;
-let hard = false;
-let insane = false;
-let duration;
-let returnHome = document.getElementById("returnHome");
-let lastScore = document.getElementById("lastScore");
-let restartGamePostWin = document.getElementById("restartGamePostWin");
-let closeHiScores = document.getElementById("closeHiScores");
-let hiScoresContainer = document.getElementById("hiScoresContainer");
-
-window.onload = playGame();
-
-hiScores.addEventListener("click", () => {
-    hiScoresContainer.classList.remove("hide");
-    return
-})
-
-closeHiScores.addEventListener("click", () => {
-    hiScoresContainer.classList.add("hide");
-    return
-})
-
-restartGamePostWin.addEventListener("click", () => {
-    restartGame();
-    winner.classList.add("hide");
-    return
-})
-
-returnHome.addEventListener("click", () => {
-    home.classList.remove("hide");
-    game.classList.add("hide");
-    winner.classList.add("hide");
-    restartGame();
-    return
-})
-
-difficultyNormal.addEventListener("click", () => {
-    normal = true;
-    hard = false;
-    insane = false;
-    return
-})
-difficultyHard.addEventListener("click", () => {
-    normal = false;
-    hard = true;
-    insane = false;
-    return
-})
-difficultyInsane.addEventListener("click", () => {
-    normal = false;
-    hard = false;
-    insane = true;
-    return
-})
-
-play.addEventListener("click", () => {
-    home.classList.add("hide");
-    game.classList.remove("hide");
-    difficultyChecker();
-    return
-})
-
-contact.addEventListener("click", () => {
-    homeBox.classList.add("hide");
-    contactBox.classList.remove("hide");
-    return
-})
-
-back.addEventListener("click", () => {
-    homeBox.classList.remove("hide");
-    contactBox.classList.add("hide");
-    successText.classList.add("hide");
-    return
-})
-
-quit.addEventListener("click", () => {
-    restartGame();
-    hiScoresContainer.classList.add("hide");
-    home.classList.remove("hide");
-    game.classList.add("hide");
-    return
-})
-
-restart.addEventListener("click", restartGame)
-
-
 let cardIcons = document.getElementsByTagName("i");
 let cards = document.getElementsByClassName("card");
+window.onload = playGame();
 
 function playGame() {
     for (let i = 0; i < cards.length; i++) {
@@ -131,6 +33,114 @@ function playGame() {
     randomOrder();
     return
 }
+
+// Changes the order of the cards on the game board.
+function randomOrder() {
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].style.order = Math.floor(Math.random() * 20) + 1;
+    }
+    return
+}
+
+// Checks whether the 2 clicked cards are a match.
+function matchingPair() {
+    let clickOne = pairArray[0].target.getAttribute("data-card-pair");
+    let clickTwo = pairArray[1].target.getAttribute("data-card-pair");
+    if (clickOne === clickTwo) {
+        incrementScore();
+        stopFurtherClicks();
+        pairsFound.push(...pairArray);
+        checkForWin();
+        pairArray = [];
+    } else if (clickOne !== clickTwo) {
+        decrementScore();
+        difficultyChecker();
+        pairArray = [];
+    }
+    return
+}
+
+// Checks if all 10 pairs are found.
+let lastScore = document.getElementById("lastScore");
+
+function checkForWin() {
+    if (pairsFound.length === 20) {
+        lastScore.innerHTML = score;
+        winner.classList.remove("hide");
+    }
+    return
+}
+
+// Stops a pair being clicked once a match is found.
+function stopFurtherClicks() {
+    for (let i = 0; i < pairArray.length; i++) {
+        let cardId = pairArray[i].target.id;
+        let card = document.getElementById(`${cardId}`)
+        card.classList.add("unclickable")
+    }
+    return
+}
+
+// Adds 3 points to the total score.
+function incrementScore() {
+    let currentScore = document.getElementById("currentScore");
+    currentScore.innerHTML = score += 3;
+    return
+}
+
+// Removes 0.5 points for an incorrect guess, or clicking the same card twice.
+function decrementScore() {
+    currentScore.innerHTML = score -= 0.5;
+    return
+}
+
+// Restart Game Parameters.
+let restart = document.getElementById("restartButton");
+restart.addEventListener("click", restartGame)
+
+function restartGame() {
+    pairArray = [];
+    pairsFound = [];
+    score = 0;
+    currentScore.innerHTML = 0;
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].classList.remove("unclickable");
+    }
+    for (let i = 0; i < cardIcons.length; i++) {
+        cardIcons[i].style.display = "none";
+    }
+    randomOrder();
+    hiScoresContainer.classList.add("hide");
+    return
+}
+
+// Difficulty Settings & Changes
+let normal = true;
+let hard = false;
+let insane = false;
+const difficultyNormal = document.getElementById("normal");
+const difficultyHard = document.getElementById("hard");
+const difficultyInsane = document.getElementById("insane");
+difficultyNormal.addEventListener("click", () => {
+    normal = true;
+    hard = false;
+    insane = false;
+    return
+})
+difficultyHard.addEventListener("click", () => {
+    normal = false;
+    hard = true;
+    insane = false;
+    return
+})
+difficultyInsane.addEventListener("click", () => {
+    normal = false;
+    hard = false;
+    insane = true;
+    return
+})
+
+let duration;
 
 function difficultyChecker() {
     if (normal) {
@@ -184,73 +194,71 @@ function difficultyChecker() {
     return
 }
 
-function randomOrder() {
-    for (let i = 0; i < cards.length; i++) {
-        cards[i].style.order = Math.floor(Math.random() * 20) + 1;
-    }
-    return
-}
+// Dialogue Box Hide/Show
+let game = document.getElementById("gamepage");
+let home = document.getElementById("homepage");
+let contactBox = document.getElementById("contactFormBox");
+let homeBox = document.getElementById("homepageBox");
+let hiScoresContainer = document.getElementById("hiScoresContainer");
 
-function restartGame() {
-    pairArray = [];
-    pairsFound = [];
-    score = 0;
-    currentScore.innerHTML = 0;
-    for (let i = 0; i < cards.length; i++) {
-        cards[i].classList.remove("unclickable");
-    }
-    for (let i = 0; i < cardIcons.length; i++) {
-        cardIcons[i].style.display = "none";
-    }
-    randomOrder();
+play.addEventListener("click", () => {
+    home.classList.add("hide");
+    game.classList.remove("hide");
+    difficultyChecker();
+    return
+})
+
+let contact = document.getElementById("contactButton");
+contact.addEventListener("click", () => {
+    homeBox.classList.add("hide");
+    contactBox.classList.remove("hide");
+    return
+})
+
+let back = document.getElementById("backButton");
+back.addEventListener("click", () => {
+    homeBox.classList.remove("hide");
+    contactBox.classList.add("hide");
+    successText.classList.add("hide");
+    return
+})
+
+let quit = document.getElementById("quitButton");
+quit.addEventListener("click", () => {
+    restartGame();
+    hiScoresContainer.classList.add("hide");
+    home.classList.remove("hide");
+    game.classList.add("hide");
+    return
+})
+
+let hiScores = document.getElementById("hiScoreButton");
+hiScores.addEventListener("click", () => {
+    hiScoresContainer.classList.remove("hide");
+    return
+})
+
+let closeHiScores = document.getElementById("closeHiScores");
+closeHiScores.addEventListener("click", () => {
     hiScoresContainer.classList.add("hide");
     return
-}
+})
 
-function matchingPair() {
-    let clickOne = pairArray[0].target.getAttribute("data-card-pair");
-    let clickTwo = pairArray[1].target.getAttribute("data-card-pair");
-    if (clickOne === clickTwo) {
-        incrementScore();
-        stopFurtherClicks();
-        pairsFound.push(...pairArray);
-        checkForWin();
-        pairArray = [];
-    } else if (clickOne !== clickTwo) {
-        decrementScore();
-        difficultyChecker();
-        pairArray = [];
-    }
+let restartGamePostWin = document.getElementById("restartGamePostWin");
+restartGamePostWin.addEventListener("click", () => {
+    restartGame();
+    winner.classList.add("hide");
     return
-}
+})
 
-function checkForWin() {
-    if (pairsFound.length === 20) {
-        lastScore.innerHTML = score;
-        winner.classList.remove("hide");
-    }
+let returnHome = document.getElementById("returnHome");
+returnHome.addEventListener("click", () => {
+    home.classList.remove("hide");
+    game.classList.add("hide");
+    winner.classList.add("hide");
+    restartGame();
     return
-}
-
-function stopFurtherClicks() {
-    for (let i = 0; i < pairArray.length; i++) {
-        let cardId = pairArray[i].target.id;
-        let card = document.getElementById(`${cardId}`)
-        card.classList.add("unclickable")
-    }
-    return
-}
-
-function incrementScore() {
-    let currentScore = document.getElementById("currentScore");
-    currentScore.innerHTML = score += 3;
-    return
-}
-
-function decrementScore() {
-    currentScore.innerHTML = score -= 0.5;
-    return
-}
+})
 
 // EmailJS Functionality
 
@@ -309,8 +317,6 @@ window.addEventListener("resize", function () {
     canvas.height = window.innerHeight;
     stars();
 })
-
-
 
 
 // to do list:
