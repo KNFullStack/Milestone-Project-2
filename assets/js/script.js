@@ -184,10 +184,10 @@ function difficultyChecker() {
     function mouseHoverFunction() {
         for (let i = 0; i < cards.length; i++) {
             cards[i].addEventListener("mouseover", function () {
-                this.style.backgroundColor = "black";
+                this.style.boxShadow = "0 0 100px 5px rgb(170, 19, 99),0 0 300px 10px rgb(127, 129, 16)";
             });
             cards[i].addEventListener("mouseleave", function () {
-                this.style.backgroundColor = "rgb(26, 24, 24)";
+                this.style.boxShadow = "none";
             });
         }
         return
