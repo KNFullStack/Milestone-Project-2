@@ -116,6 +116,7 @@ function restartGame() {
     }
     randomOrder();
     hiScoresContainer.classList.add("hide");
+    winner.classList.add("hide");
     return
 }
 
@@ -207,6 +208,7 @@ const contactBox = document.getElementById("contactFormBox");
 const homeBox = document.getElementById("homepageBox");
 const hiScoresContainer = document.getElementById("hiScoresContainer");
 const play = document.getElementById("playButton");
+const winner = document.getElementById("winner");
 
 play.addEventListener("click", () => {
     home.classList.add("hide");
