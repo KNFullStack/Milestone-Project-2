@@ -2,8 +2,8 @@
 let pairArray = [];
 let pairsFound = [];
 let score = 0;
-let cardIcons = document.getElementsByTagName("i");
-let cards = document.getElementsByClassName("card");
+const cardIcons = document.getElementsByTagName("i");
+const cards = document.getElementsByClassName("card");
 window.onload = playGame();
 
 function playGame() {
@@ -45,8 +45,8 @@ function randomOrder() {
 
 // Checks whether the 2 clicked cards are a match.
 function matchingPair() {
-    let clickOne = pairArray[0].target.getAttribute("data-card-pair");
-    let clickTwo = pairArray[1].target.getAttribute("data-card-pair");
+    const clickOne = pairArray[0].target.getAttribute("data-card-pair");
+    const clickTwo = pairArray[1].target.getAttribute("data-card-pair");
     if (clickOne === clickTwo) {
         incrementScore();
         stopFurtherClicks();
@@ -62,7 +62,7 @@ function matchingPair() {
 }
 
 // Checks if all 10 pairs are found.
-let lastScore = document.getElementById("lastScore");
+const lastScore = document.getElementById("lastScore");
 
 function checkForWin() {
     if (pairsFound.length === 20) {
@@ -96,7 +96,7 @@ function decrementScore() {
 }
 
 // Restart Game Parameters.
-let restart = document.getElementById("restartButton");
+const restart = document.getElementById("restartButton");
 restart.addEventListener("click", restartGame)
 
 function restartGame() {
@@ -196,12 +196,12 @@ function difficultyChecker() {
 }
 
 // Dialogue Box Hide/Show
-let game = document.getElementById("gamepage");
-let home = document.getElementById("homepage");
-let contactBox = document.getElementById("contactFormBox");
-let homeBox = document.getElementById("homepageBox");
-let hiScoresContainer = document.getElementById("hiScoresContainer");
-let play = document.getElementById("playButton");
+const game = document.getElementById("gamepage");
+const home = document.getElementById("homepage");
+const contactBox = document.getElementById("contactFormBox");
+const homeBox = document.getElementById("homepageBox");
+const hiScoresContainer = document.getElementById("hiScoresContainer");
+const play = document.getElementById("playButton");
 
 play.addEventListener("click", () => {
     home.classList.add("hide");
@@ -210,14 +210,14 @@ play.addEventListener("click", () => {
     return
 })
 
-let contact = document.getElementById("contactButton");
+const contact = document.getElementById("contactButton");
 contact.addEventListener("click", () => {
     homeBox.classList.add("hide");
     contactBox.classList.remove("hide");
     return
 })
 
-let back = document.getElementById("backButton");
+const back = document.getElementById("backButton");
 back.addEventListener("click", () => {
     homeBox.classList.remove("hide");
     contactBox.classList.add("hide");
@@ -225,7 +225,7 @@ back.addEventListener("click", () => {
     return
 })
 
-let quit = document.getElementById("quitButton");
+const quit = document.getElementById("quitButton");
 quit.addEventListener("click", () => {
     restartGame();
     hiScoresContainer.classList.add("hide");
@@ -234,26 +234,26 @@ quit.addEventListener("click", () => {
     return
 })
 
-let hiScores = document.getElementById("hiScoreButton");
+const hiScores = document.getElementById("hiScoreButton");
 hiScores.addEventListener("click", () => {
     hiScoresContainer.classList.remove("hide");
     return
 })
 
-let closeHiScores = document.getElementById("closeHiScores");
+const closeHiScores = document.getElementById("closeHiScores");
 closeHiScores.addEventListener("click", () => {
     hiScoresContainer.classList.add("hide");
     return
 })
 
-let restartGamePostWin = document.getElementById("restartGamePostWin");
+const restartGamePostWin = document.getElementById("restartGamePostWin");
 restartGamePostWin.addEventListener("click", () => {
     restartGame();
     winner.classList.add("hide");
     return
 })
 
-let returnHome = document.getElementById("returnHome");
+const returnHome = document.getElementById("returnHome");
 returnHome.addEventListener("click", () => {
     home.classList.remove("hide");
     game.classList.add("hide");
@@ -282,7 +282,7 @@ function sendMail(contactForm) {
     return false;
 }
 
-let successText = document.getElementById("displaySuccess");
+const successText = document.getElementById("displaySuccess");
 
 function displaySuccess() {
     successText.classList.remove("hide");
