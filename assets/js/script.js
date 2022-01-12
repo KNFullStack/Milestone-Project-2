@@ -13,6 +13,7 @@ function playGame() {
             pairArray.push(event);
             if (pairArray.length === 2) {
                 if (pairArray[0].target.id === pairArray[1].target.id) {
+                    difficultyChecker();
                     decrementScore();
                     pairArray = [];
                     return
