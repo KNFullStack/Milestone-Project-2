@@ -20,115 +20,116 @@
 </head>
 
 <body>
-    <canvas class="canvas"></canvas>
-    <section id="homepage">
-        <div id="homepageBox" class="content-box">
-            <div class="dialogue-box">
-                <h1>Train your brain with a simple memory game!</h1>
-                <br>
-                <form>
-                    <h2>Please enter a username:</h2>
-                    <input type="text" id="username" placeholder="Enter a username" name="username">
-                </form>
-                <br>
-                <button id="playButton">Play</button>
-                <button id="contactButton">Contact</button>
-                <br>
-                <br>
-                <h2>Pick a difficulty!</h2>
-                <form id="difficulty">
-                    <div>
-                        <input type="radio" id="normal" name="difficulty" value="normal" checked>
-                        <label for="normal">Normal</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="hard" name="difficulty" value="hard">
-                        <label for="hard">Hard</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="insane" name="difficulty" value="insane">
-                        <label for="insane">Insane</label>
-                    </div>
-                </form>
+    <div class="canvas">
+        <section id="homepage">
+            <div id="homepageBox" class="content-box">
+                <div class="dialogue-box">
+                    <h1>Train your brain with a simple memory game!</h1>
+                    <br>
+                    <form>
+                        <h2>Please enter a username:</h2>
+                        <input type="text" id="username" placeholder="Enter a username" name="username">
+                    </form>
+                    <br>
+                    <button id="playButton">Play</button>
+                    <button id="contactButton">Contact</button>
+                    <br>
+                    <br>
+                    <h2>Pick a difficulty!</h2>
+                    <form id="difficulty">
+                        <div>
+                            <input type="radio" id="normal" name="difficulty" value="normal" checked>
+                            <label for="normal">Normal</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="hard" name="difficulty" value="hard">
+                            <label for="hard">Hard</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="insane" name="difficulty" value="insane">
+                            <label for="insane">Insane</label>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
-        <div id="contactFormBox" class="content-box hide">
-            <div class="dialogue-box">
-                <h2>Contact form!</h2>
-                <p>if you have any queries please use the contact form below.</p>
-                <p>this includes found bugs, improvements and other feedback!</p>
-                <form id="contact-form" onsubmit="return sendMail(this);">
-                    <label for="fullName">Full Name:</label>
-                    <input type="text" id="fullName" placeholder="Enter your full name" name="fullName" required>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" placeholder="Enter your email" name="email" required>
-                    <label for="message">Message</label>
-                    <input type="text" id="message" placeholder="Enter your message" name="message" required>
-                    <button type="submit" id="sendButton">Send</button>
-                    <button type="button" id="backButton">Back</button>
-                    <p id="displaySuccess" class="hide">Thank you, your message has been sent.</p>
-                </form>
+            <div id="contactFormBox" class="content-box hide">
+                <div class="dialogue-box">
+                    <h2>Contact form!</h2>
+                    <p>if you have any queries please use the contact form below.</p>
+                    <p>this includes found bugs, improvements and other feedback!</p>
+                    <form id="contact-form" onsubmit="return sendMail(this);">
+                        <label for="fullName">Full Name:</label>
+                        <input type="text" id="fullName" placeholder="Enter your full name" name="fullName" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" placeholder="Enter your email" name="email" required>
+                        <label for="message">Message</label>
+                        <input type="text" id="message" placeholder="Enter your message" name="message" required>
+                        <button type="submit" id="sendButton">Send</button>
+                        <button type="button" id="backButton">Back</button>
+                        <p id="displaySuccess" class="hide">Thank you, your message has been sent.</p>
+                    </form>
+                </div>
             </div>
-        </div>
-    </section>
-    <section id="gamepage" class="hide">
-        <div class="cards-container">
-            <div class="menu-item" id="scoreboard">
-                <p id="score">Current Score:</p>
-                <p id="currentScore">0</p>
+        </section>
+        <section id="gamepage" class="hide">
+            <div class="cards-container">
+                <div class="menu-item" id="scoreboard">
+                    <p id="score">Current Score:</p>
+                    <p id="currentScore">0</p>
+                </div>
+                <div class="menu-item" id="previousScore">
+                    <p>Previous Score:</p>
+                    <p id="lastScore"></p>
+                </div>
+                <div class="menu-item" id="controls">
+                    <button id="restartButton">Restart</button>
+                    <button id="quitButton">Quit</button>
+                </div>
+                <div class="menu-item">
+                    <button id="hiScoreButton">Show your Hi-scores!</button>
+                </div>
+                <div class="card" id="card-one" data-card-pair="one"><i class="fas fa-space-shuttle"></i></div>
+                <div class="card" id="card-two" data-card-pair="one"><i class="fas fa-space-shuttle"></i></div>
+                <div class="card" id="card-three" data-card-pair="two"><i class="fas fa-atom"></i></div>
+                <div class="card" id="card-four" data-card-pair="two"><i class="fas fa-atom"></i></div>
+                <div class="card" id="card-five" data-card-pair="three"><i class="fas fa-sun"></i></div>
+                <div class="card" id="card-six" data-card-pair="three"><i class="fas fa-sun"></i></div>
+                <div class="card" id="card-seven" data-card-pair="four"><i class="fas fa-meteor"></i></div>
+                <div class="card" id="card-eight" data-card-pair="four"><i class="fas fa-meteor"></i></div>
+                <div class="card" id="card-nine" data-card-pair="five"><i class="fas fa-moon"></i></div>
+                <div class="card" id="card-ten" data-card-pair="five"><i class="fas fa-moon"></i></div>
+                <div class="card" id="card-eleven" data-card-pair="six"><i class="fas fa-rocket"></i></div>
+                <div class="card" id="card-twelve" data-card-pair="six"><i class="fas fa-rocket"></i></div>
+                <div class="card" id="card-thirteen" data-card-pair="seven"><i class="fas fa-satellite"></i></div>
+                <div class="card" id="card-fourteen" data-card-pair="seven"><i class="fas fa-satellite"></i></div>
+                <div class="card" id="card-fifteen" data-card-pair="eight"><i class="fas fa-user-astronaut"></i></div>
+                <div class="card" id="card-sixteen" data-card-pair="eight"><i class="fas fa-user-astronaut"></i></div>
+                <div class="card" id="card-seventeen" data-card-pair="nine"><i class="fas fa-satellite-dish"></i></div>
+                <div class="card" id="card-eighteen" data-card-pair="nine"><i class="fas fa-satellite-dish"></i></div>
+                <div class="card" id="card-nineteen" data-card-pair="ten"><i class="fas fa-radiation-alt"></i></div>
+                <div class="card" id="card-twenty" data-card-pair="ten"><i class="fas fa-radiation-alt"></i></div>
             </div>
-            <div class="menu-item" id="previousScore">
-                <p>Previous Score:</p>
-                <p id="lastScore"></p>
+        </section>
+        <section>
+            <div id="winner" class="content-box hide">
+                <div class="dialogue-box">
+                    <h2>congratulations, you win!</h2>
+                    <button id="returnHome">Back to main manu</button>
+                    <button id="restartGamePostWin">Restart the game</button>
+                </div>
             </div>
-            <div class="menu-item" id="controls">
-                <button id="restartButton">Restart</button>
-                <button id="quitButton">Quit</button>
+        </section>
+        <section>
+            <div id="hiScoresContainer" class="content-box hide">
+                <div class="dialogue-box">
+                    <p id="hiScores">
+                        Here are your best 5 scores:
+                        <button id="closeHiScores">Back to Game</button>
+                    </p>
+                </div>
             </div>
-            <div class="menu-item">
-                <button id="hiScoreButton">Show your Hi-scores!</button>
-            </div>
-            <div class="card" id="card-one" data-card-pair="one"><i class="fas fa-space-shuttle"></i></div>
-            <div class="card" id="card-two" data-card-pair="one"><i class="fas fa-space-shuttle"></i></div>
-            <div class="card" id="card-three" data-card-pair="two"><i class="fas fa-atom"></i></div>
-            <div class="card" id="card-four" data-card-pair="two"><i class="fas fa-atom"></i></div>
-            <div class="card" id="card-five" data-card-pair="three"><i class="fas fa-sun"></i></div>
-            <div class="card" id="card-six" data-card-pair="three"><i class="fas fa-sun"></i></div>
-            <div class="card" id="card-seven" data-card-pair="four"><i class="fas fa-meteor"></i></div>
-            <div class="card" id="card-eight" data-card-pair="four"><i class="fas fa-meteor"></i></div>
-            <div class="card" id="card-nine" data-card-pair="five"><i class="fas fa-moon"></i></div>
-            <div class="card" id="card-ten" data-card-pair="five"><i class="fas fa-moon"></i></div>
-            <div class="card" id="card-eleven" data-card-pair="six"><i class="fas fa-rocket"></i></div>
-            <div class="card" id="card-twelve" data-card-pair="six"><i class="fas fa-rocket"></i></div>
-            <div class="card" id="card-thirteen" data-card-pair="seven"><i class="fas fa-satellite"></i></div>
-            <div class="card" id="card-fourteen" data-card-pair="seven"><i class="fas fa-satellite"></i></div>
-            <div class="card" id="card-fifteen" data-card-pair="eight"><i class="fas fa-user-astronaut"></i></div>
-            <div class="card" id="card-sixteen" data-card-pair="eight"><i class="fas fa-user-astronaut"></i></div>
-            <div class="card" id="card-seventeen" data-card-pair="nine"><i class="fas fa-satellite-dish"></i></div>
-            <div class="card" id="card-eighteen" data-card-pair="nine"><i class="fas fa-satellite-dish"></i></div>
-            <div class="card" id="card-nineteen" data-card-pair="ten"><i class="fas fa-radiation-alt"></i></div>
-            <div class="card" id="card-twenty" data-card-pair="ten"><i class="fas fa-radiation-alt"></i></div>
-        </div>
-    </section>
-    <section>
-        <div id="winner" class="content-box hide">
-            <div class="dialogue-box">
-                <h2>congratulations, you win!</h2>
-                <button id="returnHome">Back to main manu</button>
-                <button id="restartGamePostWin">Restart the game</button>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div id="hiScoresContainer" class="content-box hide">
-            <div class="dialogue-box">
-                <p id="hiScores">
-                    Here are your best 5 scores:
-                    <button id="closeHiScores">Back to Game</button>
-                </p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
     <script src="https://kit.fontawesome.com/ca6c583753.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
     <noscript>Sorry, you need JavaScript to use this page.</noscript>

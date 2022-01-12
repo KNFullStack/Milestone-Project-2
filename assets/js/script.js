@@ -15,6 +15,7 @@ function playGame() {
                 if (pairArray[0].target.id === pairArray[1].target.id) {
                     difficultyChecker();
                     decrementScore();
+                    wrongSound.play();
                     pairArray = [];
                     return
                 } else {
@@ -35,26 +36,28 @@ function playGame() {
     return
 }
 
-// Changes the order of the cards on the game board.
 function randomOrder() {
+    // Changes the order of the cards on the game board.
     for (let i = 0; i < cards.length; i++) {
         cards[i].style.order = Math.floor(Math.random() * 20) + 1;
     }
     return
 }
 
-// Checks whether the 2 clicked cards are a match.
 function matchingPair() {
+    // Checks whether the 2 clicked cards are a match.
     const clickOne = pairArray[0].target.getAttribute("data-card-pair");
     const clickTwo = pairArray[1].target.getAttribute("data-card-pair");
     if (clickOne === clickTwo) {
         incrementScore();
+        correctSound.play();
         stopFurtherClicks();
         pairsFound.push(...pairArray);
         checkForWin();
         pairArray = [];
     } else if (clickOne !== clickTwo) {
         decrementScore();
+        wrongSound.play();
         difficultyChecker();
         pairArray = [];
     }
@@ -68,12 +71,13 @@ function checkForWin() {
     if (pairsFound.length === 20) {
         lastScore.innerHTML = score;
         winner.classList.remove("hide");
+        winnerSound.play();
     }
     return
 }
 
-// Stops a pair being clicked once a match is found.
 function stopFurtherClicks() {
+    // Stops a pair being clicked once a match is found.
     for (let i = 0; i < pairArray.length; i++) {
         let cardId = pairArray[i].target.id;
         let card = document.getElementById(`${cardId}`)
@@ -82,15 +86,15 @@ function stopFurtherClicks() {
     return
 }
 
-// Adds 3 points to the total score.
 function incrementScore() {
+    // Adds 3 points to the total score.
     let currentScore = document.getElementById("currentScore");
     currentScore.innerHTML = score += 3;
     return
 }
 
-// Removes 0.5 points for an incorrect guess, or clicking the same card twice.
 function decrementScore() {
+    // Removes 0.5 points for an incorrect guess, or clicking the same card twice.
     currentScore.innerHTML = score -= 0.5;
     return
 }
@@ -263,9 +267,9 @@ returnHome.addEventListener("click", () => {
     return
 })
 
-// EmailJS Functionality
 
 function sendMail(contactForm) {
+    // EmailJS Functionality
     emailjs.send("service_xvli6vx", "template_8fqwdtw", {
             "from_name": contactForm.fullName.value,
             "from_email": contactForm.email.value,
@@ -289,8 +293,11 @@ function displaySuccess() {
     successText.classList.remove("hide");
 }
 
+// Audio Clips
+const winnerSound = new Audio("assets/sounds/winner.wav");
+const wrongSound = new Audio("assets/sounds/wrong.wav");
+const correctSound = new Audio("assets/sounds/correct.wav");
+
 // to do list:
 // Input field for username at the end to save their score. Use localStorage to save values.
-//      username field added, now reference and use it. 
-// can i insert a "secret" element into the game board in the middle, unclickable, 1 px, and give that a really big blur? maybe border radius of 50
-// to give a star like appearance... could have multiple of them dotted about? this is in order to overcome grid gap being black
+//      username field added, now reference and use it
