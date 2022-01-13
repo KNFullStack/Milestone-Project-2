@@ -298,11 +298,12 @@ function displaySuccess() {
 
 // Recent Wins Box
 const nameInput = document.getElementById("username");
+let scoreboardArray = [];
+let difficultyForScoreboard;
+let scoreboardObject = {};
 
 function addScore() {
     // Adds player name, score and difficulty to the recent wins board.
-    let scoreboardArray = [];
-    let difficultyForScoreboard;
     if (normal) {
         difficultyForScoreboard = "Normal"
     } else if (hard) {
@@ -310,7 +311,7 @@ function addScore() {
     } else if (insane) {
         difficultyForScoreboard = "Insane"
     };
-    let scoreboardObject = {
+    scoreboardObject = {
         name: `${nameInput.value}`,
         score: `${currentScore.textContent}`,
         difficulty: `${difficultyForScoreboard}`
@@ -322,12 +323,7 @@ function addScore() {
         scoreboardArray.push(scoreboardObject);
     }
 
-    console.log(scoreboardArray[0]);
-    console.log(scoreboardArray[1]);
-    console.log(scoreboardObject);
-
-
-
+    console.log(scoreboardArray);
 }
 
 
