@@ -86,7 +86,7 @@
                     <button id="quitButton">Quit</button>
                 </div>
                 <div class="menu-item">
-                    <button id="hiScoreButton">Show your Hi-scores!</button>
+                    <button id="recentScoreButton">Show your recent wins!</button>
                 </div>
                 <div class="card" id="card-one" data-card-pair="one"><i class="fas fa-space-shuttle"></i></div>
                 <div class="card" id="card-two" data-card-pair="one"><i class="fas fa-space-shuttle"></i></div>
@@ -120,11 +120,31 @@
             </div>
         </section>
         <section>
-            <div id="hiScoresContainer" class="content-box hide">
+            <div id="recentScoresContainer" class="content-box hide">
                 <div class="dialogue-box">
-                    <p id="hiScores">
-                        Here are your best 5 scores:
-                        <button id="closeHiScores">Back to Game</button>
+                    <p id="recentScores">
+                        <h2>Recent Wins</h2>
+                        <table id="scoreTable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Score</th>
+                                    <th>Difficulty</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- <tr>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                        <button id="closeRecentScores">Back to Game</button>
                     </p>
                 </div>
             </div>

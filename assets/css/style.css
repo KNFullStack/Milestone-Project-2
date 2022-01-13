@@ -125,3 +125,14 @@ p,
 form {
     color: white;
 }
+
+table,
+th,
+td {
+    color: white;
+}
+
+th,
+td {
+    border: 1px solid white
+}

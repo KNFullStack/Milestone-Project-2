@@ -72,6 +72,7 @@ function checkForWin() {
         lastScore.innerHTML = score;
         winner.classList.remove("hide");
         winnerSound.play();
+        addScore();
     }
     return
 }
@@ -115,7 +116,7 @@ function restartGame() {
         cardIcons[i].style.display = "none";
     }
     randomOrder();
-    hiScoresContainer.classList.add("hide");
+    recentScoresContainer.classList.add("hide");
     winner.classList.add("hide");
     return
 }
@@ -206,7 +207,7 @@ const game = document.getElementById("gamepage");
 const home = document.getElementById("homepage");
 const contactBox = document.getElementById("contactFormBox");
 const homeBox = document.getElementById("homepageBox");
-const hiScoresContainer = document.getElementById("hiScoresContainer");
+const recentScoresContainer = document.getElementById("recentScoresContainer");
 const play = document.getElementById("playButton");
 const winner = document.getElementById("winner");
 
@@ -235,21 +236,21 @@ back.addEventListener("click", () => {
 const quit = document.getElementById("quitButton");
 quit.addEventListener("click", () => {
     restartGame();
-    hiScoresContainer.classList.add("hide");
+    recentScoresContainer.classList.add("hide");
     home.classList.remove("hide");
     game.classList.add("hide");
     return
 })
 
-const hiScores = document.getElementById("hiScoreButton");
+const hiScores = document.getElementById("recentScoreButton");
 hiScores.addEventListener("click", () => {
-    hiScoresContainer.classList.remove("hide");
+    recentScoresContainer.classList.remove("hide");
     return
 })
 
-const closeHiScores = document.getElementById("closeHiScores");
-closeHiScores.addEventListener("click", () => {
-    hiScoresContainer.classList.add("hide");
+const closeRecentScores = document.getElementById("closeRecentScores");
+closeRecentScores.addEventListener("click", () => {
+    recentScoresContainer.classList.add("hide");
     return
 })
 
@@ -294,6 +295,41 @@ const successText = document.getElementById("displaySuccess");
 function displaySuccess() {
     successText.classList.remove("hide");
 }
+
+// Recent Wins Box
+const nameInput = document.getElementById("username");
+
+function addScore() {
+    // Adds player name, score and difficulty to the recent wins board.
+    let scoreboardArray = [];
+    let difficultyForScoreboard;
+    if (normal) {
+        difficultyForScoreboard = "Normal"
+    } else if (hard) {
+        difficultyForScoreboard = "Hard"
+    } else if (insane) {
+        difficultyForScoreboard = "Insane"
+    };
+    let scoreboardObject = {
+        name: `${nameInput.value}`,
+        score: `${currentScore.textContent}`,
+        difficulty: `${difficultyForScoreboard}`
+    };
+    if (scoreboardArray.length === 10) {
+        scoreboardArray.shift();
+        scoreboardArray.push(scoreboardObject);
+    } else if (scoreboardArray.length < 10) {
+        scoreboardArray.push(scoreboardObject);
+    }
+
+    console.log(scoreboardArray[0]);
+    console.log(scoreboardArray[1]);
+    console.log(scoreboardObject);
+
+
+
+}
+
 
 // Audio Clips
 const winnerSound = new Audio("assets/sounds/winner.wav");
