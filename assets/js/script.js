@@ -301,6 +301,7 @@ const nameInput = document.getElementById("username");
 let scoreboardArray = [];
 let difficultyForScoreboard;
 let scoreboardObject = {};
+const toAppendTo = document.getElementById("toAppendTo")
 
 function addScore() {
     // Adds player name, score and difficulty to the recent wins board.
@@ -323,7 +324,14 @@ function addScore() {
         scoreboardArray.push(scoreboardObject);
     }
 
-    console.log(scoreboardArray);
+    let tableHtml = `<table><thead><tr><th>Name</th><th>Score</th><th>Difficulty</th></tr></thead><tbody>`;
+
+    for (details of scoreboardArray) {
+        let rowHtml = `<tr><td>${details.name}</td><td>${details.score}</td><td>${details.difficulty}</td></tr>`;
+        tableHtml += rowHtml
+    }
+    tableHtml += `</tbody></table>`
+    toAppendTo.innerHTML = tableHtml;
 }
 
 

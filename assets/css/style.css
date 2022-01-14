@@ -126,13 +126,12 @@ form {
     color: white;
 }
 
-table,
-th,
-td {
-    color: white;
+#table-container {
+    width: 33%;
+    height: 33%;
 }
 
-th,
-td {
-    border: 1px solid white
+#toAppendTo {
+    color: white;
+    display: table;
 }
