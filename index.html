@@ -24,17 +24,13 @@
         <section id="homepage">
             <div id="homepageBox" class="content-box">
                 <div class="dialogue-box">
-                    <h1>Train your brain with a simple memory game!</h1>
-                    <br>
+                    <h1>Match the cards to win!</h1>
                     <form>
                         <h2>Please enter a username:</h2>
                         <input type="text" id="username" placeholder="Enter a username" name="username">
                     </form>
-                    <br>
                     <button id="playButton">Play</button>
                     <button id="contactButton">Contact</button>
-                    <br>
-                    <br>
                     <h2>Pick a difficulty!</h2>
                     <form id="difficulty">
                         <div>
@@ -113,15 +109,16 @@
         <section>
             <div id="winner" class="content-box hide">
                 <div class="dialogue-box">
-                    <h2>congratulations, you win!</h2>
-                    <button id="returnHome">Back to main manu</button>
-                    <button id="restartGamePostWin">Restart the game</button>
+                    <h2>Congratulations, you win!</h2>
+                    <button id="returnHome">Return to Main Menu</button>
+                    <button id="restartGamePostWin">Restart Game</button>
+                    <button id="closeWinBox">Close Window</button>
                 </div>
             </div>
         </section>
         <section>
             <div id="recentScoresContainer" class="content-box hide">
-                <div class="dialogue-box" id="table-container">
+                <div class="dialogue-box">
                     <p id="recentScores">
                         <h2>Recent Wins</h2>
                         <div id="toAppendTo"></div>

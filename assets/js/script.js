@@ -212,6 +212,7 @@ const play = document.getElementById("playButton");
 const winner = document.getElementById("winner");
 
 play.addEventListener("click", () => {
+    inputValidation();
     home.classList.add("hide");
     game.classList.remove("hide");
     difficultyChecker();
@@ -270,6 +271,56 @@ returnHome.addEventListener("click", () => {
     return
 })
 
+const closeWinBox = document.getElementById("closeWinBox");
+closeWinBox.addEventListener("click", () => winner.classList.add("hide"));
+
+// Input Field Validation
+const nameInput = document.getElementById("username");
+
+function inputValidation() {
+    if (nameInput.value == "") {
+        home.classList.remove("hide");
+        game.classList.add("hide");
+        return false;
+    }
+}
+
+// Recent Wins Box
+let scoreboardArray = [];
+let difficultyForScoreboard;
+let scoreboardObject = {};
+const toAppendTo = document.getElementById("toAppendTo")
+
+function addScore() {
+    // Adds player name, score and difficulty to the recent wins board.
+    if (normal) {
+        difficultyForScoreboard = "Normal"
+    } else if (hard) {
+        difficultyForScoreboard = "Hard"
+    } else if (insane) {
+        difficultyForScoreboard = "Insane"
+    };
+    scoreboardObject = {
+        name: `${nameInput.value}`.toString(),
+        score: `${currentScore.textContent}`,
+        difficulty: `${difficultyForScoreboard}`
+    };
+    if (scoreboardArray.length === 10) {
+        scoreboardArray.shift();
+        scoreboardArray.push(scoreboardObject);
+    } else if (scoreboardArray.length < 10) {
+        scoreboardArray.push(scoreboardObject);
+    }
+
+    let tableHtml = `<table><thead><tr><th>Name</th><th>Score</th><th>Difficulty</th></tr></thead><tbody>`;
+
+    for (details of scoreboardArray) {
+        let rowHtml = `<tr><td>${details.name}</td><td>${details.score}</td><td>${details.difficulty}</td></tr>`;
+        tableHtml += rowHtml
+    }
+    tableHtml += `</tbody></table>`
+    toAppendTo.innerHTML = tableHtml;
+}
 
 function sendMail(contactForm) {
     // EmailJS Functionality
@@ -296,50 +347,14 @@ function displaySuccess() {
     successText.classList.remove("hide");
 }
 
-// Recent Wins Box
-const nameInput = document.getElementById("username");
-let scoreboardArray = [];
-let difficultyForScoreboard;
-let scoreboardObject = {};
-const toAppendTo = document.getElementById("toAppendTo")
-
-function addScore() {
-    // Adds player name, score and difficulty to the recent wins board.
-    if (normal) {
-        difficultyForScoreboard = "Normal"
-    } else if (hard) {
-        difficultyForScoreboard = "Hard"
-    } else if (insane) {
-        difficultyForScoreboard = "Insane"
-    };
-    scoreboardObject = {
-        name: `${nameInput.value}`,
-        score: `${currentScore.textContent}`,
-        difficulty: `${difficultyForScoreboard}`
-    };
-    if (scoreboardArray.length === 10) {
-        scoreboardArray.shift();
-        scoreboardArray.push(scoreboardObject);
-    } else if (scoreboardArray.length < 10) {
-        scoreboardArray.push(scoreboardObject);
-    }
-
-    let tableHtml = `<table><thead><tr><th>Name</th><th>Score</th><th>Difficulty</th></tr></thead><tbody>`;
-
-    for (details of scoreboardArray) {
-        let rowHtml = `<tr><td>${details.name}</td><td>${details.score}</td><td>${details.difficulty}</td></tr>`;
-        tableHtml += rowHtml
-    }
-    tableHtml += `</tbody></table>`
-    toAppendTo.innerHTML = tableHtml;
-}
-
-
 // Audio Clips
 const winnerSound = new Audio("assets/sounds/winner.wav");
 const wrongSound = new Audio("assets/sounds/wrong.wav");
 const correctSound = new Audio("assets/sounds/correct.wav");
 
 // to do list:
-// Input field for username at the end to save their score. Use localStorage to save values.
-//      username field added, now reference and use it
+// Use localStorage to save values of highscores - set the array as the objects and resave each win.
+// insane mode background color stays on when going BACK to normal and hard
+// shake on click?
+// input validation - cannot be empty
+// press enter to play once info entered
