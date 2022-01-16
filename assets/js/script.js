@@ -355,6 +355,8 @@ function addScore() {
 }
 
 // localStorage functions
+let scoresArray;
+
 function saveScore() {
     // Function to save the current scores to localStorage
     let itemsToSave = toAppendTo.firstChild.getElementsByTagName("td");
@@ -362,23 +364,27 @@ function saveScore() {
     for (let i = 0; i < itemsToSave.length; i++) {
         itemsToSaveArray.push(itemsToSave[i].innerText);
     }
-    localStorage.setItem("scoresArray", JSON.stringify(itemsToSaveArray))
+    localStorage.setItem("scoresArray", JSON.stringify(itemsToSaveArray));
+    scoresArray = JSON.parse(localStorage.getItem("scoresArray"));
+
 }
 
-const scoresArray = JSON.parse(localStorage.getItem("scoresArray"));
+// to do - do saveScore on unload
+// convert saving of details to an object inside the array
+// take those objects key value pairs and get that inside the table iteration below
+// then need to get the normal recent score and this one matched up and in sync
 
 function loadScore() {
+    let rowHtml;
     // Function to load the scores from localStorage
     // so now i have the array... i need to use this to build the table when the page loads
     let tableHtml = `<table><thead><tr><th>Name</th><th>Score</th><th>Difficulty</th></tr></thead><tbody>`;
-    // for (let i = 0; i < scoresArray.length; i++) {
-    //     let rowHtml = `<tr><td>${details.name}</td><td>${details.score}</td><td>${details.difficulty}</td></tr>`;
-    //     tableHtml += rowHtml
-    // }
+    scoresArray.forEach(i => rowHtml = `<tr><td>${[i]}</td><td>${[i]}</td><td>${[i]}</td></tr>`);
     tableHtml += `</tbody></table>`
-    toAppendTo.innerHTML = tableHtml;
+    // toAppendTo.innerHTML = tableHtml;
     // can i take the scoresArray.length / 3 to a variable, which would = the amount of rows needed
-
+    console.log(rowHtml);
+    console.log(tableHtml);
 }
 
 function sendMail(contactForm) {
