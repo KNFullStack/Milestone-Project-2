@@ -162,11 +162,27 @@ function difficultyChecker() {
         duration = 300;
         durations();
         mouseHoverFunction();
+        for (let i = 0; i < cards.length; i++) {
+            cards[i].addEventListener("mouseover", function () {
+                this.style.backgroundColor = "transparent";
+            });
+            cards[i].addEventListener("mouseleave", function () {
+                this.style.backgroundColor = "transparent";
+            });
+        }
         return
     } else if (hard) {
         duration = 100;
         durations();
         mouseHoverFunction();
+        for (let i = 0; i < cards.length; i++) {
+            cards[i].addEventListener("mouseover", function () {
+                this.style.backgroundColor = "transparent";
+            });
+            cards[i].addEventListener("mouseleave", function () {
+                this.style.backgroundColor = "transparent";
+            });
+        }
         return
     } else if (insane) {
         duration = 1;
