@@ -281,23 +281,13 @@ closeWinBox.addEventListener("click", () => winner.classList.add("hide"));
 
 const nameInput = document.getElementById("username");
 
-function inputValidation() {
-    // Input Field Validation
-    if (nameInput.value == "") {
-        home.classList.remove("hide");
-        game.classList.add("hide");
-        return false;
-    }
-}
-
+// Press enter to play
 nameInput.addEventListener("keydown", (event) => {
-    if (event.code === "Enter") {
-        // console.log("enter pressed")
-        // need to get it to stop default but also take the input...
+    if (event.code === "Enter" || event.code === "NumpadEnter") {
+        event.preventDefault();
+        userPlayGame();
     }
 });
-
-
 
 // Recent Wins Box
 let scoreboardArray = [];
@@ -314,6 +304,9 @@ function addScore() {
     } else if (insane) {
         difficultyForScoreboard = "Insane"
     };
+    if (nameInput.value === "") {
+        nameInput.value = "Anonymous"
+    }
     scoreboardObject = {
         name: `${nameInput.value}`.toString(),
         score: `${currentScore.textContent}`,
@@ -334,6 +327,7 @@ function addScore() {
     }
     tableHtml += `</tbody></table>`
     toAppendTo.innerHTML = tableHtml;
+    nameInput.value = "";
 }
 
 function sendMail(contactForm) {
