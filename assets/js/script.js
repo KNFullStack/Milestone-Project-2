@@ -245,6 +245,7 @@ quit.addEventListener("click", () => {
     recentScoresContainer.classList.add("hide");
     home.classList.remove("hide");
     game.classList.add("hide");
+    nameInput.value = "";
     return
 })
 
@@ -273,6 +274,7 @@ returnHome.addEventListener("click", () => {
     game.classList.add("hide");
     winner.classList.add("hide");
     restartGame();
+    nameInput.value = "";
     return
 })
 
@@ -292,7 +294,11 @@ nameInput.addEventListener("keydown", (event) => {
 // Recent Wins Box
 let scoreboardArray = [];
 let difficultyForScoreboard;
-let scoreboardObject = {};
+let scoreboardObject = {
+    name: "",
+    score: "",
+    difficulty: ""
+}
 const toAppendTo = document.getElementById("toAppendTo")
 
 function addScore() {
@@ -327,7 +333,6 @@ function addScore() {
     }
     tableHtml += `</tbody></table>`
     toAppendTo.innerHTML = tableHtml;
-    nameInput.value = "";
 }
 
 function sendMail(contactForm) {
@@ -360,9 +365,7 @@ const winnerSound = new Audio("assets/sounds/winner.wav");
 const wrongSound = new Audio("assets/sounds/wrong.wav");
 const correctSound = new Audio("assets/sounds/correct.wav");
 
+
 // to do list:
 // Use localStorage to save values of highscores - set the array as the objects and resave each win.
 // insane mode background color stays on when going BACK to normal and hard
-// shake on click?
-// input validation - cannot be empty
-// press enter to play once info entered
