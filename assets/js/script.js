@@ -121,6 +121,14 @@ function restartGame() {
     return
 }
 
+function userPlayGame() {
+    // Starts the game once Play button is clicked or enter key is pressed inside username input
+    home.classList.add("hide");
+    game.classList.remove("hide");
+    difficultyChecker();
+    return
+}
+
 // Difficulty Settings & Changes
 let normal = true;
 let hard = false;
@@ -212,10 +220,7 @@ const play = document.getElementById("playButton");
 const winner = document.getElementById("winner");
 
 play.addEventListener("click", () => {
-    inputValidation();
-    home.classList.add("hide");
-    game.classList.remove("hide");
-    difficultyChecker();
+    userPlayGame();
     return
 })
 
@@ -274,16 +279,25 @@ returnHome.addEventListener("click", () => {
 const closeWinBox = document.getElementById("closeWinBox");
 closeWinBox.addEventListener("click", () => winner.classList.add("hide"));
 
-// Input Field Validation
 const nameInput = document.getElementById("username");
 
 function inputValidation() {
+    // Input Field Validation
     if (nameInput.value == "") {
         home.classList.remove("hide");
         game.classList.add("hide");
         return false;
     }
 }
+
+nameInput.addEventListener("keydown", (event) => {
+    if (event.code === "Enter") {
+        // console.log("enter pressed")
+        // need to get it to stop default but also take the input...
+    }
+});
+
+
 
 // Recent Wins Box
 let scoreboardArray = [];
