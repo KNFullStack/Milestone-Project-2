@@ -4,12 +4,12 @@ let pairsFound = [];
 let score = 0;
 const cardIcons = document.getElementsByTagName("i");
 const cards = document.getElementsByClassName("card");
+const storedUsername = JSON.parse(localStorage.getItem('username'));
+
 window.addEventListener("load", () => {
     nameInput.value = storedUsername;
     playGame();
 })
-
-const storedUsername = JSON.parse(localStorage.getItem('username'));
 
 function playGame() {
     for (let i = 0; i < cards.length; i++) {
