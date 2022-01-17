@@ -388,6 +388,3 @@ function displaySuccess() {
 const winnerSound = new Audio("assets/sounds/winner.wav");
 const wrongSound = new Audio("assets/sounds/wrong.wav");
 const correctSound = new Audio("assets/sounds/correct.wav");
-
-// to do list:
-// Use localStorage to save username.
