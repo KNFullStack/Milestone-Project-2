@@ -22,7 +22,7 @@
 <body>
     <div class="canvas">
         <section id="homepage">
-            <div id="homepageBox" class="content-box">
+            <div id="homepageBox">
                 <div class="dialogue-box">
                     <h1>Match all the pairs to win!</h1>
                     <form>
@@ -50,24 +50,25 @@
                     </form>
                 </div>
             </div>
-            <div id="contactFormBox" class="content-box hide">
+            <div id="contactFormBox" class="hide">
                 <div class="dialogue-box">
-                    <h2>Contact form!</h2>
-                    <p>if you have any queries please use the contact form below.</p>
-                    <p>this includes found bugs, improvements and other feedback!</p>
-                    <form id="contact-form" onsubmit="return sendMail(this);">
-                        <label for="fullName">Full Name:</label>
-                        <input type="text" id="fullName" placeholder="Enter your full name" name="fullName" required>
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" placeholder="Enter your email" name="email" required>
-                        <label for="message">Message</label>
-                        <input type="text" id="message" placeholder="Enter your message" name="message" required>
-                        <span class="centering">
+                    <h2>Contact</h2>
+                    <p>If you have any queries please use the contact form below.</p>
+                    <p>Including any bugs, improvements or ideas for other games.</p>
+                    <span class="centering">
+                        <form id="contact-form" onsubmit="return sendMail(this);">
+                            <label for="fullName">Full Name:</label>
+                            <input type="text" id="fullName" placeholder="Enter your full name" name="fullName"
+                                required>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" placeholder="Enter your email" name="email" required>
+                            <label for="message">Message</label>
+                            <input type="text" id="message" placeholder="Enter your message" name="message" required>
                             <button type="submit" id="sendButton">Send</button>
                             <button type="button" id="backButton">Back</button>
-                        </span>
-                        <p id="displaySuccess" class="hide">Thank you, your message has been sent.</p>
-                    </form>
+                            <p id="displaySuccess" class="hide">Thank you, your message has been sent.</p>
+                        </form>
+                    </span>
                 </div>
             </div>
         </section>
@@ -115,7 +116,7 @@
             </div>
         </section>
         <section>
-            <div id="winner" class="content-box hide">
+            <div id="winner" class="hide">
                 <div class="dialogue-box">
                     <h2>Congratulations, you win!</h2>
                     <span class="centering">
@@ -127,7 +128,7 @@
             </div>
         </section>
         <section>
-            <div id="recentScoresContainer" class="content-box hide">
+            <div id="recentScoresContainer" class="hide">
                 <div class="dialogue-box">
                     <p id="recentScores">
                         <h2>Recent Wins</h2>
