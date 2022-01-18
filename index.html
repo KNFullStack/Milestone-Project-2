@@ -24,13 +24,15 @@
         <section id="homepage">
             <div id="homepageBox" class="content-box">
                 <div class="dialogue-box">
-                    <h1>Match the cards to win!</h1>
+                    <h1>Match all the pairs to win!</h1>
                     <form>
                         <h2>Please enter a username:</h2>
                         <input type="text" id="username" placeholder="Enter a username (optional)" name="username">
                     </form>
-                    <button id="playButton">Play</button>
-                    <button id="contactButton">Contact</button>
+                    <span class="centering">
+                        <button id="playButton">Play</button>
+                        <button id="contactButton">Contact</button>
+                    </span>
                     <h2>Pick a difficulty!</h2>
                     <form id="difficulty">
                         <div>
@@ -60,8 +62,10 @@
                         <input type="email" id="email" placeholder="Enter your email" name="email" required>
                         <label for="message">Message</label>
                         <input type="text" id="message" placeholder="Enter your message" name="message" required>
-                        <button type="submit" id="sendButton">Send</button>
-                        <button type="button" id="backButton">Back</button>
+                        <span class="centering">
+                            <button type="submit" id="sendButton">Send</button>
+                            <button type="button" id="backButton">Back</button>
+                        </span>
                         <p id="displaySuccess" class="hide">Thank you, your message has been sent.</p>
                     </form>
                 </div>
@@ -78,11 +82,15 @@
                     <p id="lastScore"></p>
                 </div>
                 <div class="menu-item" id="controls">
-                    <button id="restartButton">Restart</button>
-                    <button id="quitButton">Quit</button>
+                    <span class="centering">
+                        <button id="restartButton">Restart</button>
+                        <button id="quitButton">Quit</button>
+                    </span>
                 </div>
                 <div class="menu-item">
-                    <button id="recentScoreButton">Show your recent wins!</button>
+                    <span class="centering">
+                        <button id="recentScoreButton">Recent Wins</button>
+                    </span>
                 </div>
                 <div class="card" id="card-one" data-card-pair="one"><i class="fas fa-space-shuttle"></i></div>
                 <div class="card" id="card-two" data-card-pair="one"><i class="fas fa-space-shuttle"></i></div>
@@ -110,9 +118,11 @@
             <div id="winner" class="content-box hide">
                 <div class="dialogue-box">
                     <h2>Congratulations, you win!</h2>
-                    <button id="returnHome">Return to Main Menu</button>
-                    <button id="restartGamePostWin">Restart Game</button>
-                    <button id="closeWinBox">Close Window</button>
+                    <span class="centering">
+                        <button id="returnHome">Return to Main Menu</button>
+                        <button id="restartGamePostWin">Restart Game</button>
+                        <button id="closeWinBox">Close Window</button>
+                    </span>
                 </div>
             </div>
         </section>
@@ -122,7 +132,9 @@
                     <p id="recentScores">
                         <h2>Recent Wins</h2>
                         <div id="toAppendTo"></div>
-                        <button id="closeRecentScores">Back to Game</button>
+                        <span class="centering">
+                            <button id="closeRecentScores">Back to Game</button>
+                        </span>
                     </p>
                 </div>
             </div>

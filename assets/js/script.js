@@ -69,10 +69,11 @@ function matchingPair() {
     return
 }
 
-// Checks if all 10 pairs are found.
 const lastScore = document.getElementById("lastScore");
 
 function checkForWin() {
+    // Checks if all 10 pairs are found.
+
     if (pairsFound.length === 20) {
         lastScore.innerHTML = score;
         winner.classList.remove("hide");
