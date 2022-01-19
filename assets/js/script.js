@@ -261,6 +261,7 @@ back.addEventListener("click", () => {
     homeBox.classList.remove("hide");
     contactBox.classList.add("hide");
     successText.classList.add("hide");
+    failureText.classList.add("hide");
     return
 })
 
@@ -369,11 +370,12 @@ function sendMail(contactForm) {
             "message": contactForm.message.value,
         })
         .then((response) => {
-                console.log("success", response);
+                console.log(response);
                 displaySuccess();
             },
             (error) => {
-                console.log("Error", error);
+                console.log(error);
+                displayfailure();
             });
 
     return false;
@@ -385,6 +387,11 @@ function displaySuccess() {
     successText.classList.remove("hide");
 }
 
+const failureText = document.getElementById("displayfailure");
+
+function displayfailure() {
+    failureText.classList.remove("hide");
+}
 // Audio Clips
 const winnerSound = new Audio("assets/sounds/winner.wav");
 const wrongSound = new Audio("assets/sounds/wrong.wav");
