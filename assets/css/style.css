@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
+    color: white;
 }
 
 .canvas {
@@ -58,15 +59,6 @@
     text-align: center;
 }
 
-.dialogue-box h1,
-.dialogue-box h2 {
-    color: white;
-}
-
-.dialogue-box h2 {
-    margin: 0.5rem auto;
-}
-
 .card {
     display: flex;
     justify-content: center;
@@ -90,28 +82,38 @@
     opacity: 0;
 }
 
-/* Game Styling */
+/* Game Styling / Spacing */
+
+.dialogue-box h2 {
+    margin: 0.5rem auto;
+}
+
+textarea {
+    resize: none;
+    margin: 0.5rem auto;
+    height: 4.125rem;
+    width: 23rem;
+}
+
+input {
+    margin: 0.5rem auto;
+
+}
+
+p {
+    margin: 0.25rem auto;
+}
 
 .fas {
-    font-size: 5rem;
+    font-size: 2.5rem;
     pointer-events: none;
-    color: white;
 }
 
 button {
     align-self: center;
     background-color: black;
-    color: white;
     margin: 0.25rem;
-}
-
-p,
-form {
-    color: white;
-}
-
-#toAppendTo {
-    color: white;
+    padding: 0.5rem;
 }
 
 table {
@@ -147,20 +149,4 @@ th {
         transform: scale(0.95);
         box-shadow: 0 0 0 0 rgba(170, 19, 99, 0);
     }
-}
-
-textarea {
-    resize: none;
-    margin: 0.5rem auto;
-    height: 4.125rem;
-    width: 23rem;
-}
-
-input {
-    margin: 0.5rem auto;
-
-}
-
-p {
-    margin: 0.25rem auto;
 }
