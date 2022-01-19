@@ -1,3 +1,4 @@
+/* Fonts and General */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 * {
@@ -12,6 +13,33 @@
     background-image: url(../images/space.png);
     width: 100vw;
     height: 100vh;
+}
+
+/* Game Layout */
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    place-items: center;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    height: 12vh;
+    width: 20vw;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 1px solid white;
+    color: white;
+    font-size: 1.25rem;
+    text-align: center;
+    z-index: 1;
 }
 
 .dialogue-box {
@@ -39,70 +67,15 @@
     margin: 0.5rem auto;
 }
 
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    place-items: center;
-}
-
-.menu-item {
-    height: 12vh;
-    width: 20vw;
-    background-color: rgba(0, 0, 0, 0.9);
-    border: 1px solid white;
-    color: white;
-    font-size: 1.25rem;
-    text-align: center;
-    z-index: 10;
-}
-
 .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: transparent;
     height: 15vh;
     width: 20vw;
     border: 1px solid white;
     z-index: 1;
-}
-
-.card i {
-    color: white;
-}
-
-.centering {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-button {
-    align-self: center;
-    background-color: black;
-    color: white;
-    width: 50%;
-    margin: 0.25rem;
-}
-
-.winner-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.fas {
-    width: 100%;
-    height: 100%;
-    color: black;
-    font-size: 5rem;
-    pointer-events: none;
-    text-align: center;
-    margin-top: 1.5rem;
 }
 
 .unclickable {
@@ -115,6 +88,21 @@ button {
 
 .fade {
     opacity: 0;
+}
+
+/* Game Styling */
+
+.fas {
+    font-size: 5rem;
+    pointer-events: none;
+    color: white;
+}
+
+button {
+    align-self: center;
+    background-color: black;
+    color: white;
+    margin: 0.25rem;
 }
 
 p,
@@ -159,4 +147,20 @@ th {
         transform: scale(0.95);
         box-shadow: 0 0 0 0 rgba(170, 19, 99, 0);
     }
+}
+
+textarea {
+    resize: none;
+    margin: 0.5rem auto;
+    height: 4.125rem;
+    width: 23rem;
+}
+
+input {
+    margin: 0.5rem auto;
+
+}
+
+p {
+    margin: 0.25rem auto;
 }

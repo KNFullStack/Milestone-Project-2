@@ -20,19 +20,19 @@
 </head>
 
 <body>
+    <!-- Background Image -->
     <div class="canvas">
+        <!-- Homepage Dialogue Box Start -->
         <section id="homepage">
             <div id="homepageBox">
                 <div class="dialogue-box">
                     <h1>Match all the pairs to win!</h1>
                     <form>
                         <h2>Please enter a username:</h2>
-                        <input type="text" id="username" placeholder="Enter a username (optional)" name="username">
+                        <input type="text" id="username" placeholder="Enter a username" name="username">
                     </form>
-                    <span class="centering">
-                        <button id="playButton">Play</button>
-                        <button id="contactButton">Contact</button>
-                    </span>
+                    <button id="playButton">Play</button>
+                    <button id="contactButton">Contact</button>
                     <h2>Pick a difficulty!</h2>
                     <form id="difficulty">
                         <div>
@@ -50,28 +50,36 @@
                     </form>
                 </div>
             </div>
+            <!-- Homepage Dialogue Box End -->
+            <!-- Contact Page End -->
             <div id="contactFormBox" class="hide">
                 <div class="dialogue-box">
                     <h2>Contact</h2>
-                    <p>If you have any queries please use the contact form below.</p>
-                    <p>Including any bugs, improvements or ideas for other games.</p>
-                    <span class="centering">
-                        <form id="contact-form" onsubmit="return sendMail(this);">
-                            <label for="fullName">Full Name:</label>
+                    <p>If you have any queries please use the contact form below.<br>This includes any bugs,
+                        improvements or ideas for other games.</p>
+                    <form id="contact-form" onsubmit="return sendMail(this);">
+                        <div>
+                            <label for="fullName">Full Name</label><br>
                             <input type="text" id="fullName" placeholder="Enter your full name" name="fullName"
                                 required>
-                            <label for="email">Email:</label>
+                        </div>
+                        <div>
+                            <label for="email">Email</label><br>
                             <input type="email" id="email" placeholder="Enter your email" name="email" required>
-                            <label for="message">Message</label>
-                            <input type="text" id="message" placeholder="Enter your message" name="message" required>
-                            <button type="submit" id="sendButton">Send</button>
-                            <button type="button" id="backButton">Back</button>
-                            <p id="displaySuccess" class="hide">Thank you, your message has been sent.</p>
-                        </form>
-                    </span>
+                        </div>
+                        <div><label for="message">Message</label><br>
+                            <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+                        </div>
+                        <button type="submit" id="sendButton">Send</button>
+                        <button type="button" id="backButton">Back</button>
+                        <p id="displaySuccess" class="hide">Thank you, your message has been sent.</p>
+                    </form>
                 </div>
             </div>
+            <!-- Contact Page End -->
         </section>
+        <!-- Game Page Start -->
+        <!-- Menu Items Start -->
         <section id="gamepage" class="hide">
             <div class="cards-container">
                 <div class="menu-item" id="scoreboard">
@@ -80,19 +88,16 @@
                 </div>
                 <div class="menu-item" id="previousScore">
                     <p>Previous Score:</p>
-                    <p id="lastScore"></p>
+                    <p id="lastScore">0</p>
                 </div>
                 <div class="menu-item" id="controls">
-                    <span class="centering">
-                        <button id="restartButton">Restart</button>
-                        <button id="quitButton">Quit</button>
-                    </span>
+                    <button id="restartButton">Restart</button>
+                    <button id="quitButton">Quit</button>
                 </div>
                 <div class="menu-item">
-                    <span class="centering">
-                        <button id="recentScoreButton">Recent Wins</button>
-                    </span>
+                    <button id="recentScoreButton">Recent Wins</button>
                 </div>
+                <!-- Menu Items End -->
                 <div class="card" id="card-one" data-card-pair="one"><i class="fas fa-space-shuttle"></i></div>
                 <div class="card" id="card-two" data-card-pair="one"><i class="fas fa-space-shuttle"></i></div>
                 <div class="card" id="card-three" data-card-pair="two"><i class="fas fa-atom"></i></div>
@@ -115,31 +120,32 @@
                 <div class="card" id="card-twenty" data-card-pair="ten"><i class="fas fa-radiation-alt"></i></div>
             </div>
         </section>
+        <!-- Game Page End -->
+        <!-- Winner Box Start -->
         <section>
             <div id="winner" class="hide">
                 <div class="dialogue-box">
                     <h2>Congratulations, you win!</h2>
-                    <span class="centering">
-                        <button id="returnHome">Return to Main Menu</button>
-                        <button id="restartGamePostWin">Restart Game</button>
-                        <button id="closeWinBox">Close Window</button>
-                    </span>
+                    <button id="returnHome">Return to Main Menu</button>
+                    <button id="restartGamePostWin">Restart Game</button>
+                    <button id="closeWinBox">Close Window</button>
                 </div>
             </div>
         </section>
+        <!-- Winner Box End -->
+        <!-- Recent Scores Box Start -->
         <section>
             <div id="recentScoresContainer" class="hide">
                 <div class="dialogue-box">
                     <p id="recentScores">
                         <h2>Recent Wins</h2>
                         <div id="toAppendTo"></div>
-                        <span class="centering">
-                            <button id="closeRecentScores">Back to Game</button>
-                        </span>
                     </p>
+                    <button id="closeRecentScores">Back to Game</button>
                 </div>
             </div>
         </section>
+        <!-- Recent Scores Box End -->
     </div>
     <script src="https://kit.fontawesome.com/ca6c583753.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
