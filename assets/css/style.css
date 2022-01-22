@@ -41,10 +41,10 @@
 }
 
 .dialogue-box {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0, 0.9);
     position: absolute;
     border: 1px solid rgb(255, 255, 255);
-    padding: 1rem;
+    padding: 0.35rem;
     top: 50%;
     left: 50%;
     z-index: 1;
@@ -81,20 +81,34 @@
 
 /* Game Styling / Spacing */
 
+#contactFormBox div p {
+    padding-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
 .dialogue-box h2 {
     margin: 0.5rem auto;
+    font-size: 1rem;
 }
 
 textarea {
     resize: none;
     margin: 0.5rem auto;
     height: 4.125rem;
-    width: 23rem;
+    width: 75%;
 }
 
 input {
     margin: 0.5rem auto;
+    color: black;
+}
 
+#winnerPopUp {
+    display: flex;
+    flex-direction: row;
 }
 
 p {
@@ -106,7 +120,7 @@ p {
 }
 
 .fas {
-    font-size: clamp(2rem, 7vw, 4rem);
+    font-size: clamp(2rem, 8vw, 3.5rem);
     pointer-events: none;
 }
 
@@ -124,13 +138,12 @@ button {
 }
 
 th {
-    padding: 0 1rem 1rem;
+    padding: 0.5rem 1rem;
 }
 
 #username {
     text-align: center;
-    margin: 0.5rem;
-    width: 75%;
+    margin-bottom: 1rem;
     box-shadow: 0 0 0 0 rgba(170, 19, 99, 1);
     transform: scale(1);
     animation: pulse 1s infinite;
@@ -150,5 +163,24 @@ th {
     100% {
         transform: scale(0.95);
         box-shadow: 0 0 0 0 rgba(170, 19, 99, 0);
+    }
+}
+
+/* Media Queries */
+/* Contact Form */
+@media (min-width: 454px) {
+    textarea {
+        width: 18rem;
+    }
+
+    #contactFormBox div p {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media (min-width: 900px) {
+    #contactFormBox .dialogue-box {
+        width: 27.25rem;
     }
 }

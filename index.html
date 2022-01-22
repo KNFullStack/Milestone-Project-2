@@ -55,7 +55,7 @@
             <div id="contactFormBox" class="hide">
                 <div class="dialogue-box">
                     <h2>Contact</h2>
-                    <p>If you have any queries please use the contact form below.<br>This includes any bugs,
+                    <p>If you have any queries please use the contact form below. This includes any bugs,
                         improvements or ideas for other games.</p>
                     <form id="contact-form" onsubmit="return sendMail(this);">
                         <div>
@@ -127,9 +127,11 @@
             <div id="winner" class="hide">
                 <div class="dialogue-box">
                     <h2>Congratulations, you win!</h2>
-                    <button id="returnHome">Return to Main Menu</button>
-                    <button id="restartGamePostWin">Restart Game</button>
-                    <button id="closeWinBox">Close Window</button>
+                    <div id="winnerPopUp">
+                        <button id="returnHome">Main Menu</button>
+                        <button id="restartGamePostWin">Restart Game</button>
+                        <button id="closeWinBox">Close Window</button>
+                    </div>
                 </div>
             </div>
         </section>
