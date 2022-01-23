@@ -11,8 +11,8 @@
     <title>Space Themed Memory Game!</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="shortcut icon" href="favicon.ico">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
         (function () {
             emailjs.init("user_ck9N0BXzMtUYWcHfM2fRq");
         })();
@@ -141,10 +141,8 @@
         <section>
             <div id="recentScoresContainer" class="hide">
                 <div class="dialogue-box">
-                    <p id="recentScores">
-                        <h2>Recent Wins</h2>
-                        <div id="toAppendTo"></div>
-                    </p>
+                    <h2>Recent Wins</h2>
+                    <div id="toAppendTo"></div>
                     <button id="closeRecentScores">Back to Game</button>
                 </div>
             </div>

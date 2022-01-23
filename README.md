@@ -128,6 +128,12 @@ Technologies used are as follows.
     * Used to create the favicon.ico.
 * [FreeConvert](https://www.freeconvert.com/video-compressor/)
     * Used to compress files.
+* [W3C HTML Validator](https://validator.w3.org/)
+    * Used to validate the HTML code.
+* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+    * Used to validate the CSS code.
+* [JSHint](https://jshint.com/)
+    * Used to validate the JavaScript code.
 
 # Testing
 
@@ -144,18 +150,31 @@ The game has no backend functionality, therefore testing is based on the visual 
 * Interactive elements work as intended:
   * Icons hide and an "incorrect" sound is played if an incorrect pairing is made.
   * Icons stay and a "correct" sound is played if a correct pairing is made.
-  * Moving back down in difficulty results in that corresponding gameplay working (i.e. from "Insane" to "Normal" removes the white background effect).
+  * Difficulties work as intended.
+  * Moving back down in difficulty results in that corresponding gameplay working (e.g. "Insane" to "Normal" removes the white background effect).
   * Windows open and close properly as intended throughout.
+  * localStorage retains the user's username throughout the session, unless overwritten.
+  * After winning a game, scores and "Recent Wins" table is correctly updated.
 
 Test Results can be found here: [Test Results](/assets/readme-content/test-result.xlsx)
 
 ## Validation
+********************* ENSURE THIS IS COMPELTED PRIOR TO SUBMISSION ****************
+********************* ENSURE THIS IS COMPELTED PRIOR TO SUBMISSION ****************
+********************* ENSURE THIS IS COMPELTED PRIOR TO SUBMISSION ****************
+********************* ENSURE THIS IS COMPELTED PRIOR TO SUBMISSION ****************
+********************* ENSURE THIS IS COMPELTED PRIOR TO SUBMISSION ****************
+********************* ENSURE THIS IS COMPELTED PRIOR TO SUBMISSION ****************
 ### HTML Validation
-"index.html" was run through the [W3C HTML Validator](https://validator.w3.org/), via the direct input method. XXXXXX ANY ISSUES?
+"index.html" was run through the [W3C HTML Validator](https://validator.w3.org/), via the direct input method.
+* A warning was provided as two "script" elements were given an attribute of "type", this has been addressed.
+* A warning was provided to note that a heading element is not present in the game page, this was acknowledged but left as is.
+* An error was shown as per the following: "No p element in scope but a p end tag seen.". This was because a div element was nested within the p element, this has been addressed.
 ### CSS Validation
-CSS Stylesheet was run through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/), via the direct input method. XXX ANY ISSUES
+CSS Stylesheet was run through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/), via the direct input method. No issues were found.
 ### JavaScript Validation
-JavaScript file was run through the [](), via the direct input method. XXX ANY ISSUES
+JavaScript file was run through the [JSHint](https://jshint.com/).
+XXX ANY ISSUES
 ## User Scenarios - Testing
 How does the game design enable the goals of a first time, returning and frequent user?<br>
 ### First Time User

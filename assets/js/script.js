@@ -22,23 +22,23 @@ function playGame() {
                     decrementScore();
                     wrongSound.play();
                     pairArray = [];
-                    return
+                    return;
                 } else {
                     matchingPair();
-                    return
+                    return;
                 }
             } else if (pairArray.length === 3) {
                 pairArray = [];
-                return
+                return;
             }
-            return
+            return;
         });
     }
     for (let i = 0; i < cardIcons.length; i++) {
         cardIcons[i].style.display = "none";
     }
     randomOrder();
-    return
+    return;
 }
 
 function randomOrder() {
@@ -46,7 +46,7 @@ function randomOrder() {
     for (let i = 0; i < cards.length; i++) {
         cards[i].style.order = Math.floor(Math.random() * 20) + 1;
     }
-    return
+    return;
 }
 
 function matchingPair() {
@@ -66,7 +66,7 @@ function matchingPair() {
         difficultyChecker();
         pairArray = [];
     }
-    return
+    return;
 }
 
 const lastScore = document.getElementById("lastScore");
@@ -80,7 +80,7 @@ function checkForWin() {
         winnerSound.play();
         addScore();
     }
-    return
+    return;
 }
 
 function stopFurtherClicks() {
@@ -90,20 +90,21 @@ function stopFurtherClicks() {
         let card = document.getElementById(`${cardId}`)
         card.classList.add("unclickable")
     }
-    return
+    return;
 }
+
+const currentScore = document.getElementById("currentScore");
 
 function incrementScore() {
     // Adds 3 points to the total score.
-    let currentScore = document.getElementById("currentScore");
     currentScore.innerHTML = score += 3;
-    return
+    return;
 }
 
 function decrementScore() {
     // Removes 0.5 points for an incorrect guess, or clicking the same card twice.
     currentScore.innerHTML = score -= 0.5;
-    return
+    return;
 }
 
 // Restart Game Parameters.
@@ -124,7 +125,7 @@ function restartGame() {
     randomOrder();
     recentScoresContainer.classList.add("hide");
     winner.classList.add("hide");
-    return
+    return;
 }
 
 function userPlayGame() {
@@ -134,7 +135,7 @@ function userPlayGame() {
     difficultyChecker();
     // localStorage to save username.
     window.localStorage.setItem("username", JSON.stringify(nameInput.value));
-    return
+    return;
 }
 
 // Difficulty Settings & Changes
@@ -148,19 +149,19 @@ difficultyNormal.addEventListener("click", () => {
     normal = true;
     hard = false;
     insane = false;
-    return
+    return;
 })
 difficultyHard.addEventListener("click", () => {
     normal = false;
     hard = true;
     insane = false;
-    return
+    return;
 })
 difficultyInsane.addEventListener("click", () => {
     normal = false;
     hard = false;
     insane = true;
-    return
+    return;
 })
 
 let duration;
@@ -178,7 +179,7 @@ function difficultyChecker() {
                 this.style.backgroundColor = "transparent";
             });
         }
-        return
+        return;
     } else if (hard) {
         duration = 100;
         durations();
@@ -192,7 +193,7 @@ function difficultyChecker() {
 
             });
         }
-        return
+        return;
     } else if (insane) {
         duration = 1;
         durations();
@@ -205,7 +206,7 @@ function difficultyChecker() {
                 this.style.backgroundColor = "transparent";
             });
         }
-        return
+        return;
     }
 
     function durations() {
@@ -218,7 +219,7 @@ function difficultyChecker() {
             }, `${duration}`)
             card[0].classList.remove("fade");
         }
-        return
+        return;
     }
 
     function mouseHoverFunction() {
@@ -230,9 +231,9 @@ function difficultyChecker() {
                 this.style.boxShadow = "none";
             });
         }
-        return
+        return;
     }
-    return
+    return;
 }
 
 // Dialogue Box Hide/Show
@@ -246,14 +247,14 @@ const winner = document.getElementById("winner");
 
 play.addEventListener("click", () => {
     userPlayGame();
-    return
+    return;
 })
 
 const contact = document.getElementById("contactButton");
 contact.addEventListener("click", () => {
     homeBox.classList.add("hide");
     contactBox.classList.remove("hide");
-    return
+    return;
 })
 
 const back = document.getElementById("backButton");
@@ -262,7 +263,7 @@ back.addEventListener("click", () => {
     contactBox.classList.add("hide");
     successText.classList.add("hide");
     failureText.classList.add("hide");
-    return
+    return;
 })
 
 const quit = document.getElementById("quitButton");
@@ -271,33 +272,33 @@ quit.addEventListener("click", () => {
     recentScoresContainer.classList.add("hide");
     home.classList.remove("hide");
     game.classList.add("hide");
-    return
+    return;
 })
 
 const hiScores = document.getElementById("recentScoreButton");
 hiScores.addEventListener("click", () => {
     recentScoresContainer.classList.remove("hide");
-    return
+    return;
 })
 
 const viewScores = document.getElementById("viewScores");
 viewScores.addEventListener("click", () => {
     recentScoresContainer.classList.remove("hide");
     winner.classList.add("hide");
-    return
+    return;
 })
 
 const closeRecentScores = document.getElementById("closeRecentScores");
 closeRecentScores.addEventListener("click", () => {
     recentScoresContainer.classList.add("hide");
-    return
+    return;
 })
 
 const restartGamePostWin = document.getElementById("restartGamePostWin");
 restartGamePostWin.addEventListener("click", () => {
     restartGame();
     winner.classList.add("hide");
-    return
+    return;
 })
 
 const returnHome = document.getElementById("returnHome");
@@ -306,7 +307,7 @@ returnHome.addEventListener("click", () => {
     game.classList.add("hide");
     winner.classList.add("hide");
     restartGame();
-    return
+    return;
 })
 
 const closeWinBox = document.getElementById("closeWinBox");
