@@ -52,7 +52,7 @@ The main colors for the game are black (rgb(0, 0, 0)), white (rgb(255, 255, 255)
 ### Typography
 The text throughout the game uses the **Roboto** font.
 ### Images
-The background image was created courtesy of my mentor, [Spencer Barriball](https://github.com/5pence).
+The background image was created courtesy of my mentor, [Spencer Barriball](https://github.com/5pence). The image used in the favicon is thanks to [freepik](https://www.freepik.com/) (see link below in the "Acknowledgements" section for a direct link). 
 ### Sounds
 The three sound clips that are used are from creators on [freesound](https://freesound.org/). See links to their profiles in the "Acknowledgements" section at the bottom of this README.
 ### Wireframes
@@ -80,39 +80,72 @@ Note: these changes were applied to both the desktop and mobile version of the g
 ## Limitations
 Currently there some limitations of the game.
 
-
+* The recent scores section does not save when the browser is closed.
+* There is no high scores feature showing the wins with the highest score.
+* A user could use Dev Tools in order to find the pairs easier. 
 
 # Features
 ## Current Features
-
+* Auditory feedback when a user makes a correct or incorrect selection.
+* Ability to change the difficulty of the game in order to make it more engaging for the user, especially if the "Normal" difficulty is too easy.
+* Cards rearrange each time a new game is played.
 
 ## Future Features
 Features that could be released in subsequent versions include:
-* 
+* Saving the recent scores section.
+* Having a high scores section that shows the wins with the highest score from previous sessions.
+* Using custom icons for the cards.
+* Altering the game logic so users cannot use Dev Tools to find the pairs easier.
 
 # Technologies
 Technologies used are as follows.
 ## Languages
 * [HTML5](https://en.wikipedia.org/wiki/HTML5)
-  * Used as the main language to code the game's structure.
+  * Used as the main language to code the game's content.
 * [CSS3](https://en.wikipedia.org/wiki/CSS)
   * Used to incorporate custom styling into the game and its layout.
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
   * Used to create the game logic and interactive elements of the game.
 
 ## Libraries, Frameworks & Programs Used
-1. 
+* [Balsamiq](https://balsamiq.com/)
+   * Used to create the wireframes when starting the design.
+* [Font Awesome](https://fontawesome.com/)
+   * Used for multiple icons throughout the website.
+* [Google Fonts](https://fonts.google.com/)
+   * Used to incorporate the font "Roboto" by Christian Robertson.
+* [Techsini](http://techsini.com/multi-mockup/index.php)
+   * Used to generate the mockup image in this README file, see above.
+* [GitHub](https://github.com/)
+   * Used as a storage location for the website's content, including code and assets.
+* [GitPod](https://www.gitpod.io/)
+   * An online IDE used to write and test code that is written.
+* [Git](https://git-scm.com/)
+   * Used for version control to add, commit, and push files to GitHub.
+* [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)
+   * Used to test different CSS styles in the browser, inspect pages, general debugging, confirming JavaScript functionality with the Console and using Lighthouse.
+* [favicon.cc](https://www.favicon.cc/)
+    * Used to create the favicon.ico.
+* [FreeConvert](https://www.freeconvert.com/video-compressor/)
+    * Used to compress files.
 
 # Testing
 
-Due to the game having no backend functionality, the testing procedure is based on the visual aspect of the game. High level testing includes:
+The game has no backend functionality, therefore testing is based on the visual and interactive aspects of the game. High level testing includes:
 * Running the game on 3 different browsers and simulating responsiveness on each, varying screen sizes will be simulated, ranging from a minimum width of 300px to a maximum width of 3000px:
   * Google Chrome
   * Mozilla Firefox
   * Opera
-* No layout items in the containers overlapping other layout items.
-* Contact form to require an input in each field prior to submission.
+* No content in the containers, or the containers themselves overlapping other containers.
+* Contact form to require an appropriate input in each field prior to submission.
+* All buttons work as intended.
+* Buttons display a working hover effect.
 * Game is designed according to the wireframes made prior to coding.
+* Interactive elements work as intended:
+  * Icons hide and an "incorrect" sound is played if an incorrect pairing is made.
+  * Icons stay and a "correct" sound is played if a correct pairing is made.
+  * Moving back down in difficulty results in that corresponding gameplay working (i.e. from "Insane" to "Normal" removes the white background effect).
+  * Windows open and close properly as intended throughout.
 
 Test Results can be found here: [Test Results](/assets/readme-content/test-result.xlsx)
 
@@ -121,6 +154,8 @@ Test Results can be found here: [Test Results](/assets/readme-content/test-resul
 "index.html" was run through the [W3C HTML Validator](https://validator.w3.org/), via the direct input method. XXXXXX ANY ISSUES?
 ### CSS Validation
 CSS Stylesheet was run through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/), via the direct input method. XXX ANY ISSUES
+### JavaScript Validation
+JavaScript file was run through the [](), via the direct input method. XXX ANY ISSUES
 ## User Scenarios - Testing
 How does the game design enable the goals of a first time, returning and frequent user?<br>
 ### First Time User

@@ -131,6 +131,10 @@ button {
     padding: 0.5rem;
 }
 
+button:hover {
+    background-color: rgba(170, 19, 99, 0.5);
+}
+
 .menu-item button {
     font-size: clamp(0.5rem, 1vw, 0.75rem);
     padding: 0.25rem;
