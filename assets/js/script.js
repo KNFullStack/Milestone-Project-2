@@ -271,7 +271,6 @@ quit.addEventListener("click", () => {
     recentScoresContainer.classList.add("hide");
     home.classList.remove("hide");
     game.classList.add("hide");
-    nameInput.value = "";
     return
 })
 
@@ -307,7 +306,6 @@ returnHome.addEventListener("click", () => {
     game.classList.add("hide");
     winner.classList.add("hide");
     restartGame();
-    nameInput.value = "";
     return
 })
 

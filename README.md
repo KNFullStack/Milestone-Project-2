@@ -1,5 +1,5 @@
 ![space icon (XXX IMAGE OF GAME) 
-# Milestone Project 2 - Space Card Matching
+# Milestone Project 2 - Space Themed Memory Game
 # Table of Contents
 * [Introduction](XXXLINK TO SECTION IN THIS DOCUMENT, INCLUDING THE #LINK)
 
@@ -18,45 +18,69 @@ A mockup of the game can be seen below:
 ## User Stories
 ### First Time Visitors
 * What would I want to see as a first time visitor?
-  1. 
+  1. Establish the theme upon seeing the first page.
+  2. Easily find the button to play the game.
+  3. Have feedback (visual or auditory) if a match is correct or incorrect.
+  4. See my current score as I play the game.
 ### Returning Visitors
 * What would I want to see as a returning visitor?
-  1. 
+  1. Where to select different difficulties based, in order to test myself more.
+  2. Is there a way I can contact the creator in order to submit bugs, errors or any other feedback?
 ### Frequent Users
 * What would I want to see as a frequent visitor?
-  1. 
+  1. A recent scoreboard feature so I could prove my score to someone I've challenged.
+  2. Ability to enter a username so it can be put into the scoreboard.
+  3. A way to contact the creator in order to suggest other kinds of games.
 ## Structure
-Shown below are elements of the game that correspond to potential User Stories:
-* XXXCONTENTXXX
-> XXXWHAT DOES IT GIVE/ADD
+Shown below are elements of the game that correspond to some of the User Stories:
+* Big "Play" button in the middle of the first dialogue box.
+> Easily find the button to play the game.
+* Sounds are played when a correct or incorrect match is made and when the player wins.
+> Have feedback (visual or auditory) if a match is correct or incorrect.
+* A box containing the score is shown at the top of the game page.
+> See my current score as I play the game.
+* The background, website title and favicon initially show a space related element, with icons during the game being space related too.
+> Establish the theme upon seeing the first page.
+* Difficulties can be selected at the bottom of the first box when the page is loaded.
+> Where to select different difficulties based, in order to test myself more.
+* A "Contact" button is present on the first page that allows a user to submit feedback etc.
+> Is there a way I can contact the creator in order to submit bugs, errors or any other feedback?
 
 ## Design
 ### Colors
-The main colors for the game are black (#000000), white (#FFFFFF) and a deep pink (#AA1363) for box auras.
+The main colors for the game are black (rgb(0, 0, 0)), white (rgb(255, 255, 255)) and a deep pink (rgb(170, 19, 99)) for box auras.
 ### Typography
 The text throughout the game uses the **Roboto** font.
 ### Images
-images/videos etcXXX See links to their profiles in the "Acknowledgements" section at the bottom of this README.
+The background image was created courtesy of my mentor, [Spencer Barriball](https://github.com/5pence).
 ### Sounds
-XXXSOUDNCLIPS See links to their profiles in the "Acknowledgements" section at the bottom of this README.
+The three sound clips that are used are from creators on [freesound](https://freesound.org/). See links to their profiles in the "Acknowledgements" section at the bottom of this README.
 ### Wireframes
-Wireframes images can be seen below and also found in the "/assets/readme-content" folder. It contains a design for the desktop and mobile version of the game.
+Wireframes images can be seen below and also found in the "/assets/readme-content" folder. It contains a design for the desktop and mobile version of the game (images below show the game page Wireframes).
 
-* Mobile: <br> ![Mobile Wireframe](assets/readme-content/mobile-wireframe.png)
-* Desktop: <br> ![Desktop Wireframe](assets/readme-content/desktop-wireframe.png)
+* Mobile: <br> ![Mobile Wireframe](assets/readme-content/Mobile-Wireframe-Game-Page.PNG)
+* Desktop: <br> ![Desktop Wireframe](assets/readme-content/Desktop-Wireframe-Game-Page.PNG)
 
-See links for PDF's below:
-1. [Mobile Wireframe](assets/readme-content/wireframe-mobile.pdf)
-2. [Desktop Wireframe](assets/readme-content/wireframe-desktop.pdf)
-
+See link for PDF below:
+* [Wireframe](assets/readme-content/Wireframe.pdf)
 
 ### Design Deviations
 Compared to the original Wireframe there have been multiple deviations.
-* The XXX section.
-> XXXWHAT WAS THE CHANGE
+* The "Score:" box in the game page.
+> Changes this to include 2 boxes, one showing the current score, and one showing the previous score of the game that was just played.
+* The "Restart" and "Quit" button in the game page.
+> Made these two button sit within the same container to give room for another button.
+* The section above the game cards in the game page.
+> Now contains a button to show recent scores too, which opens a pop up showing recent game wins (along with username, score and difficulty).
+* The game page did nothing after a win apart from play a sound.
+> The game page now displays a box after winning the game, which allows the user to go back to the main menu, restart the game, show the recent scores or just close the window.
+
+Note: these changes were applied to both the desktop and mobile version of the game.
 
 ## Limitations
 Currently there some limitations of the game.
+
+
 
 # Features
 ## Current Features
