@@ -281,6 +281,13 @@ hiScores.addEventListener("click", () => {
     return
 })
 
+const viewScores = document.getElementById("viewScores");
+viewScores.addEventListener("click", () => {
+    recentScoresContainer.classList.remove("hide");
+    winner.classList.add("hide");
+    return
+})
+
 const closeRecentScores = document.getElementById("closeRecentScores");
 closeRecentScores.addEventListener("click", () => {
     recentScoresContainer.classList.add("hide");
