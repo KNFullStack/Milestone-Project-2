@@ -18,7 +18,7 @@ A mockup of the game can be seen below:
 ## User Stories
 ### First Time Visitors
 * What would I want to see as a first time visitor?
-  1. Establish the theme upon seeing the first page.
+  1. Establish the theme upon first interactions.
   2. Easily find the button to play the game.
   3. Have feedback (visual or auditory) if a match is correct or incorrect.
   4. See my current score as I play the game.
@@ -40,7 +40,7 @@ Shown below are elements of the game that correspond to some of the User Stories
 * A box containing the score is shown at the top of the game page.
 > See my current score as I play the game.
 * The background, website title and favicon initially show a space related element, with icons during the game being space related too.
-> Establish the theme upon seeing the first page.
+> Establish the theme upon first interactions.
 * Difficulties can be selected at the bottom of the first box when the page is loaded.
 > Where to select different difficulties based, in order to test myself more.
 * A "Contact" button is present on the first page that allows a user to submit feedback etc.
@@ -178,33 +178,52 @@ XXX ANY ISSUES
 ## User Scenarios - Testing
 How does the game design enable the goals of a first time, returning and frequent user?<br>
 ### First Time User
-* 
+* Establish the theme upon first interactions.
+  * Unable to be tested as this is down to user interpretation, however upon gameplay all icons are space related.
+* Easily find the button to play the game.
+  * Within the first box in the main menu a "Play" button is found. Button working as expected.
+* Have feedback (visual or auditory) if a match is correct or incorrect.
+  * Sound clips play correctly for each event.
+* See my current score as I play the game.
+  * Box in the top section of the gameplay screen highlighting the score, which correctly updates upon each correct or incorrect pairing. 
 ### Returning User
-* 
+* Where to select different difficulties based, in order to test myself more.
+  * Radio buttons found at the bottom of the main menu, displaying a normal, hard and insane mode. Each of these three difficulties work as intended and the correct difficulty restored when moving between difficulties.
+* Is there a way I can contact the creator in order to submit bugs, errors or any other feedback?
+  * Within the first box in the main menu a "Contact" button is found. Button opens a new box with a contact form that uses EmailJS. Messages correctly being sent to the determined Inbox with user feedback displaying. If an error occurs the user is also made aware of this.
 ### Frequent User
-* 
+* A recent scoreboard feature so I could prove my score to someone I've challenged.
+  * After each game win the gameplay details (Username, Score and Difficulty) are correctly appended into the dialogue box that opens when "Recent Wins" button is clicked. Up to 10 scores are permitted, the oldest score is removed and the newest score appended to the bottom of the table.
+* Ability to enter a username so it can be put into the scoreboard.
+  * Names entered into the username input box are correctly appended into the Recent Wins table. This username is remembered via localStorage and automatically entered into the username input box when the game is next loaded. When no username is entered the name "Anonymous" is used.
+* A way to contact the creator in order to suggest other kinds of games.
+  * Within the first box in the main menu a "Contact" button is found. Button opens a new box with a contact form that uses EmailJS. Messages correctly being sent to the determined Inbox with user feedback displaying. If an error occurs the user is also made aware of this.
 
-## Known Bugs
-1. 
-2. 
-3. 
+## Currently Known Bugs
+1. If a user spam clicks different icons during the game, it has been noted that when a match is made during this spam clicking, one of the icons will not remain present - it will become hidden again and the card will become unclickable. This bug does not seem to be able to be repeated consistently and is therefore difficult to pinpoint why it is happening. 
 
+## Major Bugs Fixed During Development
+1. insane to hard or normal - background remained
+2. game logic ran again each time play was clicked, play clicked twice = one click on icon counted as two clicks. play clicked three times = one click on icon counted as three clicks and so on.
+3. clicking on the cards technically was clicking on the icons as they were closer to the user in terms of z-index. game logic based on clicking the divs. this was addressed thanks to some help from a user called "FriendlyCrook" on [stackoverflow](https://stackoverflow.com/) (see link below in the "Acknowledgements" section for a direct link).
 
 ## Lighthouse Results
 Images below show the Lighthouse results on both mobile and desktop:
 1. Mobile:<br>![Mobile Lighthouse](xxxmobilelighthouseimagexxx)
 1. Desktop:<br>![Desktop Lighthouse](xxxdesktoplighthouseimagexxx)
 ### Performance
-Initially a lower score was given for the Performance category, which was 80. The cause for this was the image sizes. [TinyJPG](https://www.tinyjpg.com/) was used to reduce the file sizes of these images, which increased the score.
+
 ### Accessibility
-The text of the "Enquire now!" button in the landing page was originally white. This was flagged as a contrast issue and therefore changed to black to make it easier to read.
+
+### other categories that were too low ******
 
 # Deployment
 ## Project Creation
-To create the project, firstly a Chrome extension called "[Gitpod - Always ready to code](https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki?hl=en-GB)" was installed. A CodeInstitute template was use by navigating to the [GitHub Repo](https://github.com/Code-Institute-Org/gitpod-full-template) and clicking the "Use this template" button. The repository was named "KN-Fitness", the checkbox for "Include all branches" was checked and the green "Create repository from template" button was then clicked. From here, the green "GitPod" was then clicked (must use the above extension) and project folders and files created.
+To create the project, firstly a Chrome extension called "[Gitpod - Always ready to code](https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki?hl=en-GB)" was installed. A CodeInstitute template was use by navigating to the [GitHub Repo](https://github.com/Code-Institute-Org/gitpod-full-template) and clicking the "Use this template" button. The repository was named "Milestone-Project-2", the checkbox for "Include all branches" was checked and the green "Create repository from template" button was then clicked. From here, the green "GitPod" was then clicked (must use the above extension) and project folders and files created.
 
 Common Git commands were used as follows:
 * git add "filename-here" - used to stage files before commiting them.
+* git add . - used to stage all files before commiting them.
 * git commit -m "message here" - used to commit changes to the local repositry, with the message containing information on the changes that have occured.
 * git status - used to check the tracking status of the file in the project.
 * git push - used to push the changes to the GitHub repository.
