@@ -136,8 +136,8 @@ button:hover {
 }
 
 .menu-item button {
-    font-size: clamp(0.5rem, 1vw, 0.75rem);
-    padding: 0.25rem;
+    font-size: clamp(0.625rem, 1vw, 1rem);
+    padding: 0.1rem;
     width: 75%;
 }
 
