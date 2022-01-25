@@ -249,4 +249,11 @@ To create a local clone of the project you can follow the steps below:
 Would like to say thank you to my mentor Spencer Barriball for his help and guidance throughout the project.
 ## Code
 * Thank you to [Friendly Crook](https://stackoverflow.com/users/4944031/friendly-crook), with his/her post regarding the "pointer-events" CSS property which allowed overcoming of an obstacle regarding click events. See [here](https://stackoverflow.com/questions/30508849/ignore-click-on-div) for the direct link.
+* Thank you to [Florin Pop](https://www.florin-pop.com/) for the CSS code for the pulsing effect around the Username input box. See [here](https://www.florin-pop.com/blog/2019/03/css-pulse-effect/) for the direct link.
 ## Media
+* Thank you to [flaticon](https://www.flaticon.com/premium-icon/space-rocket-launch_69906?term=space&page=1&position=5&page=1&position=5&related_id=69906&origin=tag) for the icon that was used to create the favicon.
+* Thank you to multiple users on [freesound](https://freesound.org/) for the various sound clips that have been used.
+  * User [unadamlar](https://freesound.org/people/unadamlar/) for the two sounds:
+    * "correct.wav" -  direct link [here](https://freesound.org/people/unadamlar/sounds/476178/).
+    * "wrong.wav" - direct link [here](https://freesound.org/people/unadamlar/sounds/476177/).
+  * User [Tuudurt](https://freesound.org/people/Tuudurt/) for "winner.wav" - direct link [here](https://freesound.org/people/Tuudurt/sounds/275104/).
