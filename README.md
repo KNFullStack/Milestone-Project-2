@@ -175,6 +175,11 @@ CSS Stylesheet was run through the [W3C CSS Validator](https://jigsaw.w3.org/css
 ### JavaScript Validation
 JavaScript file was run through the [JSHint](https://jshint.com/).
 XXX ANY ISSUES
+XXX ANY ISSUES
+XXX ANY ISSUES
+XXX ANY ISSUES
+XXX ANY ISSUES
+XXX ANY ISSUES
 ## User Scenarios - Testing
 How does the game design enable the goals of a first time, returning and frequent user?<br>
 ### First Time User
@@ -203,12 +208,14 @@ How does the game design enable the goals of a first time, returning and frequen
 A user kindly volunteered to play the game once overall development was complete. The user spent 15 minutes playing the game without any input from the developer, to try to determine if any gameplay issues or bugs arose.
 
 User's comments were as follows:
-* x
-* y
-* z
+* The ability to look at the "Recent Wins" table after a game win, instead of having to close the pop up and then access it.
+  * This feature was then implemented.
+* ######################################tbc
+* ######################################tbc
 
 ## Currently Known Bugs
-1. If a user spam clicks different icons during the game, it has been noted that when a match is made during this spam clicking, one of the icons will not remain present - it will become hidden again and the card will become unclickable. This bug does not seem to be able to be repeated consistently and is therefore difficult to pinpoint why it is happening. 
+1. If a user spam clicks different icons during the game, it has been noted that when a match is made during this spam clicking, one of the icons will not remain present - it will become hidden again and the card will become unclickable. This bug does not seem to be able to be repeated consistently and is therefore difficult to pinpoint why it is happening.
+2. If a user rapidly makes two correct pairings after eachother, the "correct.wav" audio clip will not play as the first "correct.wav" instance has not yet finished.
 
 ## Major Bugs Fixed During Development
 1. Selecting Insane game mode, then going back to Hard or Normal modes originally did not cause the Insane game mode elements to stop. A white background is placed over the cards in Insane mode once hovered, which was not removed when going back to Hard or Normal. This was fixed by giving the different game difficulties their own hover effect as needed.
