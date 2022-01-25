@@ -199,23 +199,26 @@ How does the game design enable the goals of a first time, returning and frequen
 * A way to contact the creator in order to suggest other kinds of games.
   * Within the first box in the main menu a "Contact" button is found. Button opens a new box with a contact form that uses EmailJS. Messages correctly being sent to the determined Inbox with user feedback displaying. If an error occurs the user is also made aware of this.
 
+## User Testing
+A user kindly volunteered to play the game once overall development was complete. The user spent 15 minutes playing the game without any input from the developer, to try to determine if any gameplay issues or bugs arose.
+
+User's comments were as follows:
+* x
+* y
+* z
+
 ## Currently Known Bugs
 1. If a user spam clicks different icons during the game, it has been noted that when a match is made during this spam clicking, one of the icons will not remain present - it will become hidden again and the card will become unclickable. This bug does not seem to be able to be repeated consistently and is therefore difficult to pinpoint why it is happening. 
 
 ## Major Bugs Fixed During Development
-1. insane to hard or normal - background remained
-2. game logic ran again each time play was clicked, play clicked twice = one click on icon counted as two clicks. play clicked three times = one click on icon counted as three clicks and so on.
-3. clicking on the cards technically was clicking on the icons as they were closer to the user in terms of z-index. game logic based on clicking the divs. this was addressed thanks to some help from a user called "FriendlyCrook" on [stackoverflow](https://stackoverflow.com/) (see link below in the "Acknowledgements" section for a direct link).
+1. Selecting Insane game mode, then going back to Hard or Normal modes originally did not cause the Insane game mode elements to stop. A white background is placed over the cards in Insane mode once hovered, which was not removed when going back to Hard or Normal. This was fixed by giving the different game difficulties their own hover effect as needed.
+2. Originally the game logic run via a function that was invoked when the user clicked on the "Play" button. This meant that at the end of a win, if the user returned to the main menu and clicked "Play" again, the game logic would be invoked again, causing it to run twice and so on. This meant that if a card was picked as an initial selection, it would count as two clicks as the function ran twice, therefore rendering the game inoperable once the "Play" button was clicked twice. This function was subsequently removed from a click listener event and added to the onload object.
+3. Clicking on the cards technically meant the user was clicking on the icons as they were closer to the user in terms of z-index. The game logic is based on clicking the div elements that contain the icons. This was addressed thanks to some help from a user called "Friendly Crook" on [stackoverflow](https://stackoverflow.com/), where a CSS property called "pointer-events" was discovered (see link below in the "Acknowledgements" section for a direct link). 
 
 ## Lighthouse Results
 Images below show the Lighthouse results on both mobile and desktop:
-1. Mobile:<br>![Mobile Lighthouse](xxxmobilelighthouseimagexxx)
-1. Desktop:<br>![Desktop Lighthouse](xxxdesktoplighthouseimagexxx)
-### Performance
-
-### Accessibility
-
-### other categories that were too low ******
+1. Mobile:<br>![Mobile Lighthouse](assets/readme-content/Mobile-Lighthouse-Result.PNG)
+1. Desktop:<br>![Desktop Lighthouse](assets/readme-content/Desktop-Lighthouse-Result.PNG)
 
 # Deployment
 ## Project Creation
@@ -230,20 +233,20 @@ Common Git commands were used as follows:
 
 ## Publishing
 To publish the project I performed the following steps:
-1. Navigated to the project's [Github page](XXXLINKTOGITHUBPAGEXXX).
+1. Navigated to the project's [Github page](https://github.com/KNFullStack/Milestone-Project-2).
 2. Clicked on the "Settings" button.
 3. Clicked on the "Pages" button.
 4. Under the "Source" heading, changed the "Branch" setting from "None" to "Main", then clicked save.
 5. This gave a link to the [published game](XXXLINKTOPUBLISHEDWEBSITEXXX).
 ## Local Clone
 To create a local clone of the project you can follow the steps below:
-1. Navigate to the project's [Github page](XXXLINKTOGITHUBPAGEXXX).
+1. Navigate to the project's [Github page](https://github.com/KNFullStack/Milestone-Project-2).
 2. Click the "Code" dropdown button.
 3. From here there are two options:
      * Option 1: Click the "Download ZIP" button to download the files. This can be unzipped locally and opened with your preferred IDE.
-     * Option 2: Copy the link from the HTTPS box shown. Then open your preferred IDE of choice and in the terminal window of your preferred directory, use the command "git clone" followed by the link that was copied. For example "git clone XXXLINKHEREFOR.GITXXX". This will clone the files in the selected directory.
+     * Option 2: Copy the link from the HTTPS box shown. Then open your preferred IDE of choice and in the terminal window of your preferred directory, use the command "git clone" followed by the link that was copied. For example "git clone https://github.com/KNFullStack/Milestone-Project-2.git". This will clone the files in the selected directory.
 # Acknowledgements
 Would like to say thank you to my mentor Spencer Barriball for his help and guidance throughout the project.
 ## Code
-
+* Thank you to [Friendly Crook](https://stackoverflow.com/users/4944031/friendly-crook), with his/her post regarding the "pointer-events" CSS property which allowed overcoming of an obstacle regarding click events. See [here](https://stackoverflow.com/questions/30508849/ignore-click-on-div) for the direct link.
 ## Media
