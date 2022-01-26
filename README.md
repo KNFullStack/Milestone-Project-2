@@ -1,5 +1,5 @@
 ![gameplay image](assets/readme-content/game-image.PNG) 
-# Milestone Project 2 - Space Themed Memory Game
+# Milestone Project 2 - Retro Space Themed Memory Game
 # Table of Contents
 * [Introduction](https://github.com/KNFullStack/Milestone-Project-2#introduction)
 * [User Experience Design](https://github.com/KNFullStack/Milestone-Project-2#user-experience-design)  
@@ -43,12 +43,12 @@
   * [Code](https://github.com/KNFullStack/Milestone-Project-2#code)
   * [Media](https://github.com/KNFullStack/Milestone-Project-2#media)
 
-You can find the published website here: [Space Themed Memory Game!](xxxLINK TO PUBLISHED WEBSITE).
+You can find the published website here: [Retro Space Themed Memory Game!](xxxLINK TO PUBLISHED WEBSITE).
 # Introduction
 
 The project is part of a Full Stack Developer course run by CodeInstitute. This is Milestone Project 2. This project was to create a fun, interactive memory game for people to pass time with or challenge their friend's and family.
 
-## Space Themed Memory Game
+## Retro Space Themed Memory Game
 
 A mockup of the game can be seen below:
 
@@ -88,7 +88,7 @@ Shown below are elements of the game that correspond to some of the User Stories
 
 ## Design
 ### Colors
-The main colors for the game are black (rgb(0, 0, 0)), white (rgb(255, 255, 255)) and a deep pink (rgb(170, 19, 99)) for box auras.
+The main colors for the game are black (rgb(0, 0, 0)), white (rgb(255, 255, 255)) and a deep pink (rgb(170, 19, 99)) for box auras. Aimed for an older/retro style design for the game.
 ### Typography
 The text throughout the game uses the **Roboto** font.
 ### Images
