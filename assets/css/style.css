@@ -154,6 +154,10 @@ th {
     animation: pulse 1s infinite;
 }
 
+#recentScoresContainer .dialogue-box {
+    font-size: 0.75rem;
+}
+
 @keyframes pulse {
     0% {
         transform: scale(0.95);

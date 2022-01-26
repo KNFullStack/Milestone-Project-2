@@ -3,12 +3,12 @@
 # Table of Contents
 * [Introduction](XXXLINK TO SECTION IN THIS DOCUMENT, INCLUDING THE #LINK)
 
-You can find the published website here: [Space Card Matching!](xxxLINK TO PUBLISHED WEBSITE).
+You can find the published website here: [Space Themed Memory Game!](xxxLINK TO PUBLISHED WEBSITE).
 # Introduction
 
-The project is part of a Full Stack Developer course run by CodeInstitute. This is Milestone Project 2. This project was to create a fun, interactive card matching game for people to pass time with or challenge their friend's and family.
+The project is part of a Full Stack Developer course run by CodeInstitute. This is Milestone Project 2. This project was to create a fun, interactive memory game for people to pass time with or challenge their friend's and family.
 
-## Space Themed Card Matching Game
+## Space Themed Memory Game
 
 A mockup of the game can be seen below:
 
