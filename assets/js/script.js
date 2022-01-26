@@ -378,6 +378,9 @@ function sendMail(contactForm) {
         .then((response) => {
                 console.log(response);
                 displaySuccess();
+                contactForm.fullName.value = "";
+                contactForm.email.value = "";
+                contactForm.message.value = "";
             },
             (error) => {
                 console.log(error);
