@@ -31,7 +31,7 @@
     * [First Time User](https://github.com/KNFullStack/Milestone-Project-2#first-time-user)
     * [Returning User](https://github.com/KNFullStack/Milestone-Project-2#returning-user)
     * [Frequent User](https://github.com/KNFullStack/Milestone-Project-2#frequent-user)
-  * [Frequent User](https://github.com/KNFullStack/Milestone-Project-2#user-testing)
+  * [User Testing](https://github.com/KNFullStack/Milestone-Project-2#user-testing)
   * [Currently Known Bugs](https://github.com/KNFullStack/Milestone-Project-2#currently-known-bugs)
   * [Major Bugs Fixed During Development](https://github.com/KNFullStack/Milestone-Project-2#major-bugs-fixed-during-development)
   * [Lighthouse Results](https://github.com/KNFullStack/Milestone-Project-2#lighthouse-results)
