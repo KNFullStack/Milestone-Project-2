@@ -1,7 +1,47 @@
-![space icon (XXX IMAGE OF GAME) 
+![gameplay image](assets/readme-content/game-image.PNG) 
 # Milestone Project 2 - Space Themed Memory Game
 # Table of Contents
-* [Introduction](XXXLINK TO SECTION IN THIS DOCUMENT, INCLUDING THE #LINK)
+* [Introduction](https://github.com/KNFullStack/Milestone-Project-2#introduction)
+* [User Experience Design](https://github.com/KNFullStack/Milestone-Project-2#user-experience-design)  
+  * [User Stories](https://github.com/KNFullStack/Milestone-Project-2#user-stories)
+    * [First Time Visitors](https://github.com/KNFullStack/Milestone-Project-2#first-time-visitors)
+    * [Returning Visitors](https://github.com/KNFullStack/Milestone-Project-2#returning-visitors)
+    * [Frequent Users](https://github.com/KNFullStack/Milestone-Project-2#frequent-users)
+  * [Structure](https://github.com/KNFullStack/Milestone-Project-2#structure)
+  * [Design](https://github.com/KNFullStack/Milestone-Project-2#design)
+    * [Colors](https://github.com/KNFullStack/Milestone-Project-2#colors)
+    * [Typography](https://github.com/KNFullStack/Milestone-Project-2#typography)
+    * [Images](https://github.com/KNFullStack/Milestone-Project-2#images)
+    * [Sounds](https://github.com/KNFullStack/Milestone-Project-2#sounds)
+    * [Wireframes](https://github.com/KNFullStack/Milestone-Project-2#wireframes)
+    * [Design Deviations](https://github.com/KNFullStack/Milestone-Project-2#design-deviations)
+  * [Limitations](https://github.com/KNFullStack/Milestone-Project-2#limitations)
+* [Features](https://github.com/KNFullStack/Milestone-Project-2#features)
+  * [Current Features](https://github.com/KNFullStack/Milestone-Project-2#current-features)
+  * [Future Features](https://github.com/KNFullStack/Milestone-Project-2#future-features)
+* [Technologies](https://github.com/KNFullStack/Milestone-Project-2#technologies)
+  * [Languages](https://github.com/KNFullStack/Milestone-Project-2#languages)
+  * [Libraries, Frameworks & Programs Used](https://github.com/KNFullStack/Milestone-Project-2#libraries-frameworks--programs-used)
+* [Testing](https://github.com/KNFullStack/Milestone-Project-2#testing)
+  * [Validation](https://github.com/KNFullStack/Milestone-Project-2#validation)
+    * [HTML Validation](https://github.com/KNFullStack/Milestone-Project-2#html-validation)
+    * [CSS Validation](https://github.com/KNFullStack/Milestone-Project-2#css-validation)
+    * [JavaScript Validation](https://github.com/KNFullStack/Milestone-Project-2#javascript-validation)
+  * [User Scenarios - Testing](https://github.com/KNFullStack/Milestone-Project-2#user-scenarios---testing)
+    * [First Time User](https://github.com/KNFullStack/Milestone-Project-2#first-time-user)
+    * [Returning User](https://github.com/KNFullStack/Milestone-Project-2#returning-user)
+    * [Frequent User](https://github.com/KNFullStack/Milestone-Project-2#frequent-user)
+  * [Frequent User](https://github.com/KNFullStack/Milestone-Project-2#user-testing)
+  * [Currently Known Bugs](https://github.com/KNFullStack/Milestone-Project-2#currently-known-bugs)
+  * [Major Bugs Fixed During Development](https://github.com/KNFullStack/Milestone-Project-2#major-bugs-fixed-during-development)
+  * [Lighthouse Results](https://github.com/KNFullStack/Milestone-Project-2#lighthouse-results)
+* [Deployment](https://github.com/KNFullStack/Milestone-Project-2#deployment)
+   * [Project Creation](https://github.com/KNFullStack/Milestone-Project-2#project-creation)
+   * [Publishing](https://github.com/KNFullStack/Milestone-Project-2#publishing)
+   * [Local Clone](https://github.com/KNFullStack/Milestone-Project-2#local-clone)
+* [Acknowledgements](https://github.com/KNFullStack/Milestone-Project-2#acknowledgements)
+  * [Code](https://github.com/KNFullStack/Milestone-Project-2#code)
+  * [Media](https://github.com/KNFullStack/Milestone-Project-2#media)
 
 You can find the published website here: [Space Themed Memory Game!](xxxLINK TO PUBLISHED WEBSITE).
 # Introduction
@@ -156,7 +196,7 @@ The game has no backend functionality, therefore testing is based on the visual 
   * localStorage retains the user's username throughout the session, unless overwritten.
   * After winning a game, scores and "Recent Wins" table is correctly updated.
 
-Test Results can be found here: [Test Results](/assets/readme-content/test-result.xlsx)
+Test Results can be found here: [Test Results](assets/readme-content/test-result.xlsx)
 
 ## Validation
 ********************* ENSURE THIS IS COMPELTED PRIOR TO SUBMISSION ****************
