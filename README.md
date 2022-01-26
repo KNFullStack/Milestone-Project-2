@@ -210,8 +210,10 @@ A user kindly volunteered to play the game once overall development was complete
 User's comments were as follows:
 * The ability to look at the "Recent Wins" table after a game win, instead of having to close the pop up and then access it.
   * This feature was then implemented.
-* ######################################tbc
-* ######################################tbc
+* Noticed an error with the "Message" box on the contact form where the text color was white.
+  * This was subsequently changed to black.
+* Noticed that the username input had no limit, therefore entered an extremely long username. Once a game was then played and the username appended to the Recent Wins table, it was clear a limit needed to be implemented as the table became skewed.
+  * A character limit was added via the HTML attribute "maxlength".
 
 ## Currently Known Bugs
 1. If a user spam clicks different icons during the game, it has been noted that when a match is made during this spam clicking, one of the icons will not remain present - it will become hidden again and the card will become unclickable. This bug does not seem to be able to be repeated consistently and is therefore difficult to pinpoint why it is happening.
