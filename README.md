@@ -199,27 +199,21 @@ The game has no backend functionality, therefore testing is based on the visual 
 Test Results can be found here: [Test Results](assets/readme-content/test-result.xlsx)
 
 ## Validation
-********************* ENSURE THIS IS COMPELTED PRIOR TO SUBMISSION ****************
-********************* ENSURE THIS IS COMPELTED PRIOR TO SUBMISSION ****************
-********************* ENSURE THIS IS COMPELTED PRIOR TO SUBMISSION ****************
-********************* ENSURE THIS IS COMPELTED PRIOR TO SUBMISSION ****************
-********************* ENSURE THIS IS COMPELTED PRIOR TO SUBMISSION ****************
-********************* ENSURE THIS IS COMPELTED PRIOR TO SUBMISSION ****************
 ### HTML Validation
 "index.html" was run through the [W3C HTML Validator](https://validator.w3.org/), via the direct input method.
 * A warning was provided as two "script" elements were given an attribute of "type", this has been addressed.
-* A warning was provided to note that a heading element is not present in the game page, this was acknowledged but left as is.
+* A warning was provided to note that a heading element is not present in the game page, this has been addressed.
 * An error was shown as per the following: "No p element in scope but a p end tag seen.". This was because a div element was nested within the p element, this has been addressed.
 ### CSS Validation
 CSS Stylesheet was run through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/), via the direct input method. No issues were found.
 ### JavaScript Validation
 JavaScript file was run through the [JSHint](https://jshint.com/).
-XXX ANY ISSUES
-XXX ANY ISSUES
-XXX ANY ISSUES
-XXX ANY ISSUES
-XXX ANY ISSUES
-XXX ANY ISSUES
+* Multiple warnings were flagged up regarding missing semi-colons (mostly at the end of functions) - this was corrected.
+* Warning "Creating global 'for' variable." - this was corrected by changing the line of code to `"for (let details of scoreboardArray)"` instead of `"for (details of scoreboardArray)"`.
+    * This also caused `details` to show multiple times as an undefined variable, which was corrected with the code above.
+* One undefined variable - emailjs - this is used in the EmailJS API.
+* One unused variable - sendMail - this is used in the EmailJS API.
+* Various warnings regarding the use of ES6 syntax.
 ## User Scenarios - Testing
 How does the game design enable the goals of a first time, returning and frequent user?<br>
 ### First Time User

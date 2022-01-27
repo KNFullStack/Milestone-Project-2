@@ -9,7 +9,7 @@ const storedUsername = JSON.parse(localStorage.getItem('username'));
 window.addEventListener("load", () => {
     nameInput.value = storedUsername;
     playGame();
-})
+});
 
 function playGame() {
     for (let i = 0; i < cards.length; i++) {
@@ -87,8 +87,8 @@ function stopFurtherClicks() {
     // Stops a pair being clicked once a match is found.
     for (let i = 0; i < pairArray.length; i++) {
         let cardId = pairArray[i].target.id;
-        let card = document.getElementById(`${cardId}`)
-        card.classList.add("unclickable")
+        let card = document.getElementById(`${cardId}`);
+        card.classList.add("unclickable");
     }
     return;
 }
@@ -109,7 +109,7 @@ function decrementScore() {
 
 // Restart Game Parameters.
 const restart = document.getElementById("restartButton");
-restart.addEventListener("click", restartGame)
+restart.addEventListener("click", restartGame);
 
 function restartGame() {
     pairArray = [];
@@ -150,19 +150,19 @@ difficultyNormal.addEventListener("click", () => {
     hard = false;
     insane = false;
     return;
-})
+});
 difficultyHard.addEventListener("click", () => {
     normal = false;
     hard = true;
     insane = false;
     return;
-})
+});
 difficultyInsane.addEventListener("click", () => {
     normal = false;
     hard = false;
     insane = true;
     return;
-})
+});
 
 let duration;
 
@@ -216,7 +216,7 @@ function difficultyChecker() {
             card[0].classList.add("fade");
             setTimeout(() => {
                 card[0].style.display = "none";
-            }, `${duration}`)
+            }, `${duration}`);
             card[0].classList.remove("fade");
         }
         return;
@@ -248,14 +248,14 @@ const winner = document.getElementById("winner");
 play.addEventListener("click", () => {
     userPlayGame();
     return;
-})
+});
 
 const contact = document.getElementById("contactButton");
 contact.addEventListener("click", () => {
     homeBox.classList.add("hide");
     contactBox.classList.remove("hide");
     return;
-})
+});
 
 const back = document.getElementById("backButton");
 back.addEventListener("click", () => {
@@ -264,7 +264,7 @@ back.addEventListener("click", () => {
     successText.classList.add("hide");
     failureText.classList.add("hide");
     return;
-})
+});
 
 const quit = document.getElementById("quitButton");
 quit.addEventListener("click", () => {
@@ -273,33 +273,33 @@ quit.addEventListener("click", () => {
     home.classList.remove("hide");
     game.classList.add("hide");
     return;
-})
+});
 
 const hiScores = document.getElementById("recentScoreButton");
 hiScores.addEventListener("click", () => {
     recentScoresContainer.classList.remove("hide");
     return;
-})
+});
 
 const viewScores = document.getElementById("viewScores");
 viewScores.addEventListener("click", () => {
     recentScoresContainer.classList.remove("hide");
     winner.classList.add("hide");
     return;
-})
+});
 
 const closeRecentScores = document.getElementById("closeRecentScores");
 closeRecentScores.addEventListener("click", () => {
     recentScoresContainer.classList.add("hide");
     return;
-})
+});
 
 const restartGamePostWin = document.getElementById("restartGamePostWin");
 restartGamePostWin.addEventListener("click", () => {
     restartGame();
     winner.classList.add("hide");
     return;
-})
+});
 
 const returnHome = document.getElementById("returnHome");
 returnHome.addEventListener("click", () => {
@@ -308,7 +308,7 @@ returnHome.addEventListener("click", () => {
     winner.classList.add("hide");
     restartGame();
     return;
-})
+});
 
 const closeWinBox = document.getElementById("closeWinBox");
 closeWinBox.addEventListener("click", () => winner.classList.add("hide"));
@@ -330,20 +330,20 @@ let scoreboardObject = {
     name: "",
     score: "",
     difficulty: ""
-}
-const toAppendTo = document.getElementById("toAppendTo")
+};
+const toAppendTo = document.getElementById("toAppendTo");
 
 function addScore() {
     // Adds player name, score and difficulty to the recent wins board.
     if (normal) {
-        difficultyForScoreboard = "Normal"
+        difficultyForScoreboard = "Normal";
     } else if (hard) {
-        difficultyForScoreboard = "Hard"
+        difficultyForScoreboard = "Hard";
     } else if (insane) {
-        difficultyForScoreboard = "Insane"
-    };
+        difficultyForScoreboard = "Insane";
+    }
     if (nameInput.value === "") {
-        nameInput.value = "Anonymous"
+        nameInput.value = "Anonymous";
     }
     scoreboardObject = {
         name: `${nameInput.value}`.toString(),
@@ -359,11 +359,11 @@ function addScore() {
 
     let tableHtml = `<table><thead><tr><th>Name</th><th>Score</th><th>Difficulty</th></tr></thead><tbody>`;
 
-    for (details of scoreboardArray) {
+    for (let details of scoreboardArray) {
         let rowHtml = `<tr><td>${details.name}</td><td>${details.score}</td><td>${details.difficulty}</td></tr>`;
-        tableHtml += rowHtml
+        tableHtml += rowHtml;
     }
-    tableHtml += `</tbody></table>`
+    tableHtml += `</tbody></table>`;
     toAppendTo.innerHTML = tableHtml;
 }
 
