@@ -52,7 +52,7 @@ The project is part of a Full Stack Developer course run by CodeInstitute. This 
 
 A mockup of the game can be seen below:
 
-![Game Mockup Image](assets/readme-content/mockup.PNG)
+![Game Mockup Image](assets/readme-content/mockup.PNG) XXX
 
 # User Experience Design
 ## User Stories
