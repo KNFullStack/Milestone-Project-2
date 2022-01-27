@@ -25,7 +25,7 @@
         <!-- Homepage Dialogue Box Start -->
         <section id="homepage">
             <div id="homepageBox">
-                <div class="dialogue-box">
+                <div class="dialogue-box" aria-label="main menu">
                     <h1>Match all the pairs to win!</h1>
                     <form>
                         <h2>Please enter a username:</h2>
@@ -33,7 +33,7 @@
                     </form>
                     <button id="playButton">Play</button>
                     <button id="contactButton">Contact</button>
-                    <h2>Pick a difficulty!</h2>
+                    <h2 aria-label="pick a difficulty">Pick a difficulty!</h2>
                     <form id="difficulty">
                         <div>
                             <input type="radio" id="normal" name="difficulty" value="normal" checked>
@@ -53,7 +53,7 @@
             <!-- Homepage Dialogue Box End -->
             <!-- Contact Page End -->
             <div id="contactFormBox" class="hide">
-                <div class="dialogue-box">
+                <div class="dialogue-box" aria-label="contact form">
                     <h2>Contact</h2>
                     <p>If you have any queries please use the contact form below. This includes any bugs,
                         improvements or ideas for other games.</p>
@@ -81,17 +81,17 @@
         </section>
         <!-- Game Page Start -->
         <!-- Menu Items Start -->
-        <main id="gamepage" class="hide">
+        <main id="gamepage" class="hide" aria-label="main game page">
             <div class="cards-container">
                 <div class="menu-item" id="scoreboard">
-                    <h2 id="score" class="resize-font">Current Score:</h2>
+                    <h2 id="score" class="resize-font" aria-label="current score">Current Score:</h2>
                     <p id="currentScore" class="resize-font">0</p>
                 </div>
                 <div class="menu-item" id="previousScore">
-                    <h2 class="resize-font">Previous Score:</h2>
+                    <h2 class="resize-font" aria-label="previous score">Previous Score:</h2>
                     <p id="lastScore" class="resize-font">0</p>
                 </div>
-                <div class="menu-item" id="controls">
+                <div class="menu-item" id="controls" aria-label="controls box">
                     <button id="restartButton">Restart</button>
                     <button id="quitButton">Quit</button>
                 </div>
@@ -126,8 +126,8 @@
         <section>
             <div id="winner" class="hide">
                 <div class="dialogue-box">
-                    <h2>Congratulations, you win!</h2>
-                    <div id="winnerPopUp">
+                    <h2 aria-label="winner box">Congratulations, you win!</h2>
+                    <div id="winnerPopUp" aria-label="winner box controls">
                         <button id="returnHome">Main Menu</button>
                         <button id="restartGamePostWin">Restart Game</button>
                         <button id="viewScores">Recent Scores</button>
@@ -141,7 +141,7 @@
         <section>
             <div id="recentScoresContainer" class="hide">
                 <div class="dialogue-box">
-                    <h2>Recent Wins</h2>
+                    <h2 aria-label="recent wins">Recent Wins</h2>
                     <div id="toAppendTo"></div>
                     <button id="closeRecentScores">Back to Game</button>
                 </div>
