@@ -122,7 +122,7 @@ p {
 }
 
 .fas {
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: clamp(2rem, 8vw, 2rem);
     pointer-events: none;
 }
 
@@ -192,5 +192,25 @@ th {
 @media (min-width: 900px) {
     #contactFormBox .dialogue-box {
         width: 27.25rem;
+    }
+}
+
+/* Game Card Sizes */
+@media (min-width: 900px) {
+    .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        height: 15vh;
+        width: 20vw;
+        border: 1px solid white;
+        z-index: 1;
+        margin-bottom: 1vh;
+    }
+
+    .fas {
+        font-size: clamp(2rem, 8vw, 3rem);
+        pointer-events: none;
     }
 }
