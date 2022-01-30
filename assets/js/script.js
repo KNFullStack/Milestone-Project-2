@@ -9,6 +9,10 @@ const storedUsername = JSON.parse(localStorage.getItem('username'));
 window.addEventListener("load", () => {
     nameInput.value = storedUsername;
     playGame();
+    // Used to scroll 1 pixel to hide address bar on mobiles
+    setTimeout(function () {
+        window.scrollTo(0, 1);
+    }, 0);
 });
 
 function playGame() {
@@ -405,10 +409,3 @@ function displayfailure() {
 const winnerSound = new Audio("assets/sounds/winner.wav");
 const wrongSound = new Audio("assets/sounds/wrong.wav");
 const correctSound = new Audio("assets/sounds/correct.wav");
-
-// Used to scroll 1 pixel to hide address bar on mobiles
-window.addEventListener("load", () => {
-    setTimeout(function () {
-        window.scrollTo(0, 1);
-    }, 0);
-});
