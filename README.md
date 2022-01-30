@@ -43,7 +43,7 @@
   * [Code](https://github.com/KNFullStack/Milestone-Project-2#code)
   * [Media](https://github.com/KNFullStack/Milestone-Project-2#media)
 
-You can find the published website here: [Retro Space Themed Memory Game!](xxxLINK TO PUBLISHED WEBSITE).
+You can find the published website here: [Retro Space Themed Memory Game!](https://knfullstack.github.io/Milestone-Project-2/).
 # Introduction
 
 The project is part of a Full Stack Developer course run by CodeInstitute. This is Milestone Project 2. This project was to create a fun, interactive memory game for people to pass time with or challenge their friend's and family.
@@ -280,7 +280,7 @@ To publish the project I performed the following steps:
 2. Clicked on the "Settings" button.
 3. Clicked on the "Pages" button.
 4. Under the "Source" heading, changed the "Branch" setting from "None" to "Main", then clicked save.
-5. This gave a link to the [published game](XXXLINKTOPUBLISHEDWEBSITEXXX).
+5. This gave a link to the [published game](https://knfullstack.github.io/Milestone-Project-2/).
 ## Local Clone
 To create a local clone of the project you can follow the steps below:
 1. Navigate to the project's [Github page](https://github.com/KNFullStack/Milestone-Project-2).
