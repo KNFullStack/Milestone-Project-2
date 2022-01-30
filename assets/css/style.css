@@ -121,7 +121,7 @@ p {
 }
 
 .fas {
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: clamp(2rem, 8vw, 3.5rem);
     pointer-events: none;
 }
 
