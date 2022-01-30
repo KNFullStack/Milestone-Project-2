@@ -61,10 +61,11 @@
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    height: 15vh;
+    height: 13vh;
     width: 20vw;
     border: 1px solid white;
     z-index: 1;
+    margin-bottom: 2vh;
 }
 
 .unclickable {
