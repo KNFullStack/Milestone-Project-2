@@ -61,10 +61,11 @@
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    height: 15vh;
+    height: 8vh;
     width: 20vw;
     border: 1px solid white;
     z-index: 1;
+    margin-bottom: 9vh;
 }
 
 .unclickable {
@@ -121,7 +122,7 @@ p {
 }
 
 .fas {
-    font-size: clamp(2rem, 8vw, 3.5rem);
+    font-size: clamp(2rem, 8vw, 3rem);
     pointer-events: none;
 }
 
