@@ -7,6 +7,7 @@
     * [First Time Visitors](https://github.com/KNFullStack/Milestone-Project-2#first-time-visitors)
     * [Returning Visitors](https://github.com/KNFullStack/Milestone-Project-2#returning-visitors)
     * [Frequent Users](https://github.com/KNFullStack/Milestone-Project-2#frequent-users)
+    * [User Story Screenshots](https://github.com/KNFullStack/Milestone-Project-2#user-story-screenshots)
   * [Structure](https://github.com/KNFullStack/Milestone-Project-2#structure)
   * [Design](https://github.com/KNFullStack/Milestone-Project-2#design)
     * [Colors](https://github.com/KNFullStack/Milestone-Project-2#colors)
