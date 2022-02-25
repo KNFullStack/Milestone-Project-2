@@ -71,6 +71,36 @@ A mockup of the game can be seen below:
   1. A recent scoreboard feature so I could prove my score to someone I've challenged.
   2. Ability to enter a username so it can be put into the scoreboard.
   3. A way to contact the creator in order to suggest other kinds of games.
+
+### User Story Screenshots
+Below are screenshots relating to some of the user stories.
+> Easily find the button to play the game.
+
+> Where to select different difficulties based, in order to test myself more.
+
+> Ability to enter a username so it can be put into the scoreboard.
+
+![User Story Image](assets/readme-content/user-story-3.PNG)
+
+> Establish the theme upon first interactions.
+
+> Have feedback (visual or auditory) if a match is correct or incorrect.
+
+> See my current score as I play the game.
+
+![User Story Image](assets/readme-content/user-story-1.PNG)
+
+> Is there a way I can contact the creator in order to submit bugs, errors or any other feedback?
+
+> A way to contact the creator in order to suggest other kinds of games.
+
+![User Story Image](assets/readme-content/user-story-4.PNG)
+
+> A recent scoreboard feature so I could prove my score to someone I've challenged.
+
+![User Story Image](assets/readme-content/user-story-2.PNG)
+
+
 ## Structure
 Shown below are elements of the game that correspond to some of the User Stories:
 * Big "Play" button in the middle of the first dialogue box.
